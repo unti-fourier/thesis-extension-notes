@@ -6,6 +6,7 @@
 | --- | --- | --- |
 | 1 | [Type (M) coefficients and the Bochner tensor identification](01-type-m-bochner-tensor.md) | Exact row completion and a conditional tensor-composition theorem checked in Lean; full import-level assembly remains unverified. |
 | 2 | [A measurable Reiter gap and a compact metrizable factor](02-measurable-reiter-gap.md) | Common measurable lower bound checked in Lean; factor argument checked in writing; Hochschild nonvanishing not covered. |
+| 2 | [An absolute degree-two witness](02-absolute-hochschild-degree-two.md) | Written-checked characterization for countable discrete actions with a norm-one witness; not fully formalized. |
 | 3 | [Real row-norm convolution completion](03-real-row-convolution-completion.md) | Real Banach algebra identification checked in Lean; complex and amenability theorems not covered. |
 | 3 | [Complex row-norm convolution completion](03-complex-row-convolution-completion.md) | Exact complex norm and product checked in Lean; amenability theorem not covered. |
 | 3 | [Recovering a Reiter net from one inner derivation](03-inner-derivation-reiter-net.md) | Specified derivation and identities verified in Lean; recovery of the Reiter net checked in writing. |
