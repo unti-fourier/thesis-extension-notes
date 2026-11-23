@@ -13,6 +13,7 @@
 | 4 | [Sharp implementer bounds](04-sharp-implementer-bounds.md) | Sharp bounds 2 and 1 under the stated coefficient hypothesis, with independent written audit; full theorem not formalized. |
 | 5 | [Sharp Reiter radius profile of a free group boundary](05-free-group-boundary-radius-profile.md) | Exact range-only value 2/(R+1), verified in writing; full I-defect not covered. |
 | 6 | [Symmetric local probability kernels](06-symmetric-local-haar-kernels.md) | Pair-groupoid and general compact-unit Haar kernel existence checked in Lean. |
+| 6 | [Innerness and Reiter fields for étale groupoids](06-etale-innerness-reiter.md) | Written-checked equivalence for a specified derivation with compact units; not fully formalized. |
 | 7 | [Uniformly bounded stabilizers and matrix reconstruction](07-uniformly-bounded-stabilizers.md) | Written proof independently checked; no Lean verification or priority claim. |
 
 The direction 7 note proves a comparison for compact Hausdorff actions with uniformly bounded finite stabilizers, without requiring finitely many stabilizer elements or conjugacy classes. It separates the sharp matrix reconstruction constant from the bound for the inverse cohomological comparison.
