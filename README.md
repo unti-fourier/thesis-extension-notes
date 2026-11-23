@@ -9,7 +9,7 @@
 | 3 | [Complex row-norm convolution completion](03-complex-row-convolution-completion.md) | Exact complex norm and product checked in Lean; amenability theorem not covered. |
 | 3 | [Recovering a Reiter net from one inner derivation](03-inner-derivation-reiter-net.md) | Specified derivation and identities verified in Lean; recovery of the Reiter net checked in writing. |
 | 4 | [Sharp implementer bounds](04-sharp-implementer-bounds.md) | Sharp bounds 2 and 1 under the stated coefficient hypothesis, with independent written audit; full theorem not formalized. |
-| 6 | [Symmetric local probability kernels](06-symmetric-local-haar-kernels.md) | Pair-groupoid and neighbourhood lemmas checked in Lean; general Haar construction checked in writing. |
+| 6 | [Symmetric local probability kernels](06-symmetric-local-haar-kernels.md) | Pair-groupoid and general compact-unit Haar kernel existence checked in Lean. |
 | 7 | [Uniformly bounded stabilizers and matrix reconstruction](07-uniformly-bounded-stabilizers.md) | Written proof independently checked; no Lean verification or priority claim. |
 
 The direction 7 note proves a comparison for compact Hausdorff actions with uniformly bounded finite stabilizers, without requiring finitely many stabilizer elements or conjugacy classes. It separates the sharp matrix reconstruction constant from the bound for the inverse cohomological comparison.
