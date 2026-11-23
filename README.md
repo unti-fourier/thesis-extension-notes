@@ -4,6 +4,7 @@
 
 | Direction | Note | Status |
 | --- | --- | --- |
+| 2 | [A measurable Reiter gap and a compact metrizable factor](02-measurable-reiter-gap.md) | Common measurable lower bound checked in Lean; factor argument checked in writing; Hochschild nonvanishing not covered. |
 | 3 | [Real row-norm convolution completion](03-real-row-convolution-completion.md) | Real Banach algebra identification checked in Lean; complex and amenability theorems not covered. |
 | 3 | [Complex row-norm convolution completion](03-complex-row-convolution-completion.md) | Exact complex norm and product checked in Lean; amenability theorem not covered. |
 | 7 | [Uniformly bounded stabilizers and matrix reconstruction](07-uniformly-bounded-stabilizers.md) | Written proof independently checked; no Lean verification or priority claim. |
