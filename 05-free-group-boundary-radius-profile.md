@@ -25,3 +25,31 @@ Telescoping the expected inequalities over \(N\) steps gives \(1\le (R+1)/N+(R+1
 The same upper construction from a fixed end and the lower bound for arbitrary vertex fields compute the closed-ball profile of the regular tree as well. See [Gal (2008), Definitions 2.1.1 and 2.1.3](https://doi.org/10.4171/GGD/31) for the quantitative property A profile, and [Bell–Nagórko (2025 online; 2021 preprint), Theorem 9.1 and §9.3](https://arxiv.org/html/2109.04891#S9.SS3) for related finite large-girth problems and finite subtree boundary effects. The action profile of [Nowak (2008), Definitions 3.1–3.2](https://doi.org/10.1016/j.aim.2008.04.012) minimizes support cardinality rather than radius.
 
 **Verification.** Both bounds were independently checked in writing. This note makes no Lean or full \(I\)-defect claim.
+
+## Contrast: actions admitting an invariant probability
+
+Let \(F_r\) act on a compact Hausdorff space \(X\) admitting an invariant probability \(\nu\). Write \(d=2r\), \(q=d-1\), \(B_R=B(e,R)\), and \(N=|B_R|\). For \(p:X\to\operatorname{Prob}(B_R)\) put \(d_s(x)=\|s p_x-p_{sx}\|_1\). Each of
+\[
+ \max_s\sup_x d_s(x),\qquad
+ d^{-1}\sum_s\sup_x d_s(x),\qquad
+ \sup_x d^{-1}\sum_s d_s(x)
+\]
+has minimum \(c_R=2q^R/N=(2/d)(d-2+2/N)\). **If \(\nu\) has full support, the unique minimizer for each objective is the constant uniform field on \(B_R\).** This applies to the profinite completion with its Haar probability. The value tends to \(2-2/r\), unlike the boundary value above.
+
+**Value and interior equality.** The mean \(u=\int p_x\,d\nu(x)\) satisfies \(\int d_s\,d\nu\ge\|su-u\|_1\). If \(U_t=\{g:u(g)>t\}\) and \(c(U_t)\) counts its components in the left Cayley tree, then
+\[
+ \frac1d\sum_s\|su-u\|_1
+ =\frac2d\int_0^\infty\bigl[(d-2)|U_t|+2c(U_t)\bigr]\,dt
+ \ge\frac2d(d-2+2\|u\|_\infty)\ge c_R.
+\]
+The last bound is an equality only for \(u=N^{-1}\mathbf1_{B_R}\), whose shift loses \(q^R\) coordinates in each direction. The constant field realizes this bound. At equality even for the integrated objective \(d^{-1}\sum_s\int d_s\,d\nu\), the coordinates outside the shifted-ball overlap already account for \(c_R\) after integration. The overlap therefore has no defect. With full support and continuity this gives \(p_{sx}(sg)=p_x(g)\) on each interior edge at every \(x\). Hence \(p_x(g)=f(g^{-1}x)\) on \(B_R\), where \(f(x)=p_x(e)\) and \(T_{B_R}f=1\) for \(T_A f(x)=\sum_{g\in A}f(g^{-1}x)\). Conversely every such nonnegative continuous \(f\) minimizes the integrated objective.
+
+**Boundary equality and uniqueness.** Interior equality gives \(d_s(x)=2T_{E_s}f(x)\), where \(E_s=\{g\in B_R:sg\notin B_R\}\): the overlap agrees and the two remaining masses are equal. For \(R\ge1\), each element of the sphere \(H_R\) of radius \(R\) belongs to exactly \(q\) of the \(E_s\). Equality for even the smallest of the three supremum objectives forces the continuous function \(\sum_s d_s(x)\) to be identically \(dc_R\), since its average already has that value and \(\nu\) has full support. Therefore, for \(v=f-1/N\), \(T_{B_R}v=T_{H_R}v=0\) and then \(T_{B_{R-1}}v=0\). The radial identity
+\[
+ (T_S-dI)T_{B_j}=T_{H_{j+1}}-qT_{H_j}\qquad (j\ge1)
+\]
+has coefficients \(0,-q,1\) at lengths below \(j\), equal to \(j\), and equal to \(j+1\), respectively. It gives the same vanishing at each lower radius and finally \(v=T_{B_0}v=0\). The \(R=0\) case has only one possible field.
+
+For the integrated objective alone, take \(R=1\), the quotient \(F_r\to\mathbb Z/(2r+1)\) with \(a_i\mapsto i\), and \(f=\mathbf1_{\{\overline0\}}\). The ball maps bijectively onto the quotient, so \(T_{B_1}f=1\) and the field of point masses minimizes the integrated objective. At \(x=\overline1\) and \(s=a_1\) its shifted mass is at \(a_1^2\) outside \(B_1\), so the supremum defect is \(2\). Pullback gives the same distinction on the profinite completion.
+
+The scalar lower bound is the Cayley-tree edge count and coarea. The additional conclusion here is the classification of the equality case for continuous fields. The defect convention agrees with [Nowak (2008), Definition 3.1](https://doi.org/10.1016/j.aim.2008.04.012) after reindexing, while Definition 3.2 optimizes support cardinality at a prescribed error. This section was independently checked in writing; no Lean verification, full \(I\)-norm statement, or priority claim is made.
