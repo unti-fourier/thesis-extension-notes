@@ -161,3 +161,36 @@ Let \(A=C(X)\otimes\mathcal K(\ell^2)\), where \(X\) is nonempty compact Hausdor
 By [Ozawa–Suzuki (2021), Theorem 3.2](https://doi.org/10.1007/s00029-021-00699-2), the center expectation characterizes amenability of the action on \(A\), and by the equivariant center identification it is the same expectation condition for \(C(X)\). For the latter it is equivalent to topological amenability as above. The coefficient algebra \(A\) is nuclear by approximation through the finite matrix corners. Thus [Anantharaman–Delaroche (2002), Theorem 3.4](https://arxiv.org/abs/math/0005014) makes both crossed products equal and nuclear when the base action is amenable, and [Haagerup (1983), Theorem 3.1](https://doi.org/10.1007/BF01394319) gives universal innerness. In the opposite direction even the all-positive universal condition implies innerness of \(\Delta_\mu\). For the all-positive test alone one may include nonessential coefficients, since its test elements belong to \(B_\mu\) and nuclearity gives innerness for those coefficients too.
 
 No product decomposition of the action is needed. This nonunital extension was checked independently in writing; it is work in progress, not a preprint, and makes no Lean verification or priority claim.
+
+
+## General discrete actions: separating action amenability from nuclearity
+
+Let \(A\ne0\) be any \(C^*\)-algebra, let \(\alpha:\Gamma\curvearrowright A\) be an action of a discrete group, and let \(B_\mu=A\rtimes_{\alpha,\mu}\Gamma\), with \(\mu=r\) or \(\mathrm{full}\). Neither separability nor a unit is needed. The same regular-diagonal construction gives a single bounded derivation \(\Delta_\mu\) into the dual of a two-sided essential contractive coefficient, with
+\[
+\Delta_\mu\text{ inner}\ \Longleftrightarrow\
+\alpha\text{ amenable in the sense of Anantharaman-Delaroche},
+\qquad
+B_\mu\text{ nuclear}\ \Longleftrightarrow\
+A\text{ nuclear and }\Delta_\mu\text{ inner}.
+\]
+For the two universal conditions, quantify over two-sided essential contractive coefficients with the right \(\ell^2\) inequality for positive elements either of \(A\) or of \(D=Z(M(A))\) acting as multipliers. If \(A\) is nuclear, both predicates are equivalent to innerness of \(\Delta_\mu\). In forming the test, however, use \(Z=Z(A^{**})\) as the center for balancing and \(N=\ell^\infty(\Gamma,Z)\). No identification of \(D^{**}\) with \(Z\) is assumed.
+
+**The approximate-unit argument is independent of the algebra \(A\).** In the preceding construction replace \((e_n)\) by any net \((e_j)\) of positive contractive approximate units in \(A\). The images \(P_j=\pi(e_j)\) converge strong* to \(1\) on the regular space, by nondegeneracy at each coordinate and uniform boundedness. For a normal positive \(\omega\) the squares of both predual error norms are bounded by \(\|\omega\|\omega((1-P_j)^2)\), which tends to zero. Thus the quotient predual is still two-sided essential. Its row bound holds even for \(b_k\in B_\mu\):
+\[
+ \left(\sum_k\|\xi b_k\|^2\right)^{1/2}
+ \le \|\xi\|\left\|\sum_k \rho_\mu(b_k)\rho_\mu(b_k)^*\right\|^{1/2}.
+\]
+It follows from the normal predual estimate and one common lift through the quotient. For positive \(b_k\), the right side is at most \(\|\xi\|\|\sum_k b_k\|\). For an arbitrary essential coefficient satisfying the test on \(A\), apply the inequality to \(m_k e_j\) for \(m_k\in D_+\) and pass to the norm limit on the coefficient. This proves the multiplier test without any density assumption on \(D\) in \(Z\).
+
+The equations \([Y_F,\rho_\mu(e_j u_g)]=0\) and \(\rho_\mu(e_j u_g)\to U_g\) recover commutation with \(U_g\) just as above. The identity-coordinate compression gives an equivariant \(Z\)-linear map \(N\to Z\) fixing the constants, which the same order-modulus argument turns into a conditional expectation. The expectation also gives the implementer by subtracting the expected constant. This is exactly the condition in [Ozawa–Suzuki (2021), Theorem 3.2](https://doi.org/10.1007/s00029-021-00699-2); the expectation need not be normal.
+
+**Nuclearity and the full norm.** For completeness, amenability gives the contractive quasi-central vectors of [Ozawa–Suzuki (2021), Definition 2.11 and Theorem 3.2](https://doi.org/10.1007/s00029-021-00699-2). In the discrete case they may be truncated to finite supports \(K\) in the Hilbert-module norm without affecting the limits. Compress the regular representation to \(K\), with values in \(M_K(A)\), and return to \(B_{\rm full}\) by \(x\mapsto WxW^*\), where \(W=(\xi(p)^*u_p)_{p\in K}\). Both maps are completely positive contractions. Their composite sends \(a u_s\) to \(\langle\xi,a\widetilde\alpha_s\xi\rangle u_s\). The error in its coefficient is bounded by
+\[
+ \|[a^*,\xi]\|\,\|\xi\|+
+ \|a(\langle\xi,\widetilde\alpha_s\xi\rangle-1)\|,
+\]
+which tends to zero. Precomposing with the full-to-reduced quotient approximates the identity of \(B_{\rm full}\), so the quotient is injective. If \(A\) is nuclear then the return through \(M_K(A)\) also proves nuclearity. Conversely the coefficient at the group identity is a completely positive contractive retraction from either crossed product onto \(A\); thus nuclearity of \(B_\mu\) implies nuclearity of \(A\). Moreover, by [Haagerup (1983), Theorem 3.1](https://doi.org/10.1007/BF01394319), it gives innerness for all dual Banach bimodule coefficients, in particular for the distinguished one. This proves the nuclearity equivalence and closes the cycle of implications for nuclear \(A\).
+
+**Why the nuclearity hypothesis matters for the universal predicates.** Take \(A=C_r^*(F_2)\) with the action of the trivial group. The distinguished \(\Delta_\mu\) is zero. But applying the same construction to the auxiliary system \(F_2\curvearrowright\mathbb C\) gives a non-inner derivation on the very same algebra \(C_r^*(F_2)\): innerness would yield a left-invariant mean on \(\ell^\infty(F_2)\). Its coefficient satisfies the inequality for all positive elements of \(C_r^*(F_2)\) by the row bound above. Hence it satisfies both tests for the trivial-group system, and both universal predicates fail there. This argument does not decide whether the two universal predicates agree for arbitrary nonnuclear \(A\).
+
+This generalization was independently checked in writing. It is work in progress, not a preprint, and makes no Lean verification or priority claim.
