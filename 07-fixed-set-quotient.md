@@ -36,3 +36,25 @@ If \(\Gamma\) is amenable and \(F\ne\varnothing\), the commuting unitaries from 
 For the converse, if \(x\in F\) use the quotient onto \(C=C_r^*(\Gamma)\) at \(x\). The bimodule \(\mathcal B(\ell^2\Gamma)/C\) pulled back to \(B\) is contractive and unital on both sides, and its right \(C(X)\)-action is scalar at \(x\). The vector functional \(\tau(T)=\langle T\delta_e,\delta_e\rangle\) restricts to a trace on \(C\), so \(a\mapsto a\tau-\tau a\) takes values in the dual of this quotient module. If it is inner, subtracting its implementer from \(\tau\) gives a \(C\)-central functional with value \(1\) at \(1\). On the diagonal this yields a nonzero left invariant bounded finitely additive measure on \(\Gamma\); normalizing its total variation gives a left invariant mean. Thus for nonamenable \(\Gamma\) the derivation remains non-inner after pullback along the surjection.
 
 The descent and this criterion were checked independently in writing, not formalized in Lean.
+
+
+## The sharp exponent for the right annihilator
+
+Replace the left side of the geometric inequality by \((\sum_i\|\xi f_i\|^p)^{1/p}\), keeping the same right side. For \(1\le p<2\) the common right annihilator is still \(J_\mu\), and the preceding derivation criterion is unchanged. For every finite \(p\ge2\), the common right annihilator is zero.
+
+In the disjoint-corner test write \(\eta=\xi f\) and \(t=bh\). Applying the new inequality to \(k,1-k\), where \(k\) is the cutoff used previously, gives
+\[
+\varepsilon^p\|\eta t\|^p
+ \le\big((1+\varepsilon^2\|t\|^2)^{p/2}-1\big)\|\eta\|^p
+ \le \tfrac p2\varepsilon^2\|t\|^2\|\eta\|^p
+ \qquad(1\le p<2).
+\]
+The exponent \(2-p>0\) again forces \(E(fbh)=0\). Fixed-point evaluation still detects the quotient, and the modules satisfying the original \(\ell^1\) bound are among those satisfying the \(\ell^p\) bound, so the same counterexample to innerness applies.
+
+For \(p=2\), let \(\pi\) be a faithful unital representation of \(B_\mu\) and use \(S_2(H)\) with left and right multiplication by \(\pi(B_\mu)\). For arbitrary nonnegative \(f_i\), not necessarily with disjoint supports, \(\sum_i f_i^2\le(\sum_i f_i)^2\) gives
+\[
+\sum_i\|T\pi(f_i)\|_2^2\le \Big\|\sum_i f_i\Big\|_\infty^2\|T\|_2^2.
+\]
+The right action is faithful by testing on rank-one operators. For \(p>2\) use the same module and the scalar \(\ell^p\)-\(\ell^2\) inequality. In the two-point swap, \(B_\mu=M_2\) and \(P_1+\varepsilon e_{10}\) gives equality in the \(\ell^2\) estimate for the two coordinate projections. The off-diagonal corner acts nontrivially even though there are no common fixed points.
+
+This is a classification of the common annihilator, not of innerness for all coefficients at or above \(p=2\). The threshold calculation was independently checked in writing, not in Lean.
