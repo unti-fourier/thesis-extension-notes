@@ -15,5 +15,6 @@
 | 6 | [Symmetric local probability kernels](06-symmetric-local-haar-kernels.md) | Pair-groupoid and general compact-unit Haar kernel existence checked in Lean. |
 | 6 | [Innerness and Reiter fields for étale groupoids](06-etale-innerness-reiter.md) | Written-checked equivalence for a specified derivation with compact units; not fully formalized. |
 | 7 | [Uniformly bounded stabilizers and matrix reconstruction](07-uniformly-bounded-stabilizers.md) | Written proof independently checked; no Lean verification or priority claim. |
+| 7 | [Right-ℓ¹ coefficients and the fixed-set quotient](07-fixed-set-quotient.md) | Written-checked annihilator formula for full and reduced crossed products; contrasts with the row-norm algebra. |
 
-The direction 7 note proves a comparison for compact Hausdorff actions with uniformly bounded finite stabilizers, without requiring finitely many stabilizer elements or conjugacy classes. It separates the sharp matrix reconstruction constant from the bound for the inverse cohomological comparison.
+The stabilizer note proves a comparison for compact Hausdorff actions with uniformly bounded finite stabilizers, without requiring finitely many stabilizer elements or conjugacy classes. It separates the sharp matrix reconstruction constant from the bound for the inverse cohomological comparison.
