@@ -93,4 +93,6 @@ ample の場合は \(b_j=1_{B_j}\) を取ればよい。被覆の重なりはこ
 
 局所式 (1) の前提は、bisection が open で、その中の唯一の矢を行積分で検出できることである。非 étale の Lebesgue pair groupoid では局所同相のグラフは各行で零測度になり、同じテストを得られない。上の \(\Lambda_\gamma\) は二つのファイバーの間の写像である。
 
-**検証と範囲。** この判定定理は書面で検証した。Haar の行積分と畳み込みに関する一部の補題は Lean 4.27 で検証済みだが、この同値全体は Lean 化していない。[Anantharaman-Delaroche–Renault（2000）](https://www.unige.ch/math/EnsMath/en/monographies/monographie-no-36)、Definitions 2.2.1–2.2.2、2.2.8 は通常の従順性の定式化を与える。
+**検証と範囲（2026年11月24日）。** Lean 4.27 で、同じ有界複素線形切断 \(J\) に対する指定 derivation の innerness、不変二重双対元の存在、正のコンパクト台 Reiter 密度、連続な確率測度系の Reiter ネットの同値を、分割したモジュールの接続として型検査した。所与の full continuous Haar 系に対する対角切断も構成した。確率測度系から戻る際の密度は \(q(\gamma)=\chi(\gamma)h(\gamma)/(c(s\gamma)t(r\gamma))\)、\(t(x)=\int\chi\,d\mu^x\) であり、行質量は厳密に \(1\)、全変動距離は \(2\delta\) 未満、矢の欠損の増加は \(4\delta\) 以下になる。合わせた最終宣言の公理依存は Lean 標準の三公理のみ。旧モジュールを一括して再ビルドしたという意味ではない。
+
+非空コンパクト単位空間をもつ局所コンパクト Hausdorff étale groupoid、所与の full continuous 左 Haar 系、片側 range ノルム、上記の特定の derivation が対象である。第二可算性は仮定しない。一般の非 étale Haar 系、非コンパクト単位空間、両側 \(I\)-ノルム、通常の Banach amenability に関する主張ではない。[Anantharaman-Delaroche–Renault（2000）](https://www.unige.ch/math/EnsMath/en/monographies/monographie-no-36)、Definitions 2.2.1–2.2.2、2.2.8 および Proposition 2.2.13 は標準の従順性の定式化を与える（同書の第二可算性仮定とは区別した）。
