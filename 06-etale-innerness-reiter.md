@@ -96,3 +96,23 @@ ample の場合は \(b_j=1_{B_j}\) を取ればよい。被覆の重なりはこ
 **検証と範囲（2026年11月24日）。** Lean 4.27 で、同じ有界複素線形切断 \(J\) に対する指定 derivation の innerness、不変二重双対元の存在、正のコンパクト台 Reiter 密度、連続な確率測度系の Reiter ネットの同値を、分割したモジュールの接続として型検査した。所与の full continuous Haar 系に対する対角切断も構成した。確率測度系から戻る際の密度は \(q(\gamma)=\chi(\gamma)h(\gamma)/(c(s\gamma)t(r\gamma))\)、\(t(x)=\int\chi\,d\mu^x\) であり、行質量は厳密に \(1\)、全変動距離は \(2\delta\) 未満、矢の欠損の増加は \(4\delta\) 以下になる。合わせた最終宣言の公理依存は Lean 標準の三公理のみ。旧モジュールを一括して再ビルドしたという意味ではない。
 
 非空コンパクト単位空間をもつ局所コンパクト Hausdorff étale groupoid、所与の full continuous 左 Haar 系、片側 range ノルム、上記の特定の derivation が対象である。第二可算性は仮定しない。一般の非 étale Haar 系、非コンパクト単位空間、両側 \(I\)-ノルム、通常の Banach amenability に関する主張ではない。[Anantharaman-Delaroche–Renault（2000）](https://www.unige.ch/math/EnsMath/en/monographies/monographie-no-36)、Definitions 2.2.1–2.2.2、2.2.8 および Proposition 2.2.13 は標準の従順性の定式化を与える（同書の第二可算性仮定とは区別した）。
+
+
+## 非コンパクトな単位空間：innerness から局所 Reiter 条件へ
+
+**以下は書面検算のみ。** \(X\) のコンパクト性を外し、\(P=C_0(X)\) とする。他の groupoid と Haar 系の仮定、range ノルム、制限テストは同じとする。任意の切断でなく、単位矢上に \(J_\lambda p(1_x)=p(x)/c(x)\) と置く対角切断を使う。ここで \(D_{J_\lambda}^\sharp\) が inner なら、任意のコンパクト \(L\subset X\)、\(C\subset G\)、\(\varepsilon>0\) に対し \(q\in C_c(G)_+\) が存在し、
+\[
+0\le Rq\le1,\qquad Rq=1\ \text{on } L\cup s(C)\cup r(C),\qquad
+\sup_{\gamma\in C}d_q(\gamma)<\varepsilon
+\]
+を満たす。
+
+有限個の bisection テスト \(a_j\) を先に選ぶ。その台の両端と \(L\cup s(C)\cup r(C)\) で \(1\) となる \(0\le u\le1\)、\(u\in C_c(X)\) を一つ固定する。係数の実装元から得る \(T(u)\in(K^\sharp)^*\) は、すべての \(\Phi\in A^*\) に対し
+\[
+\Phi(a_j)=T(u)\big((\Phi\circ L_{a_j})|_K\big)
+\]
+を与える。従って有限積 \(A^n\) で分離すると、同じ \(k\in K\cap C_c(G)\) によりすべての \(a_j*k\) が \(a_j\) に任意の精度で近づく。\(w=J_\lambda u-k\) は \(Rw=u\) で、先の bisection 評価から \(C\) 上で欠損を小さくできる。ここで \(c(x)\) の連続性は単位空間上の局所 cutoff で確かめられ、テストの Haar 重みの補正にはコンパクト台上の \(1/c\) だけを使う。
+
+\(q=|w|/\max\{1,(R|w|)\circ r\}\) とすれば、指定集合で行質量は厳密に \(1\) になり、\(C\) 上の欠損は高々 \(2\sup_C d_w\) である。全単位で確率測度が必要なら不足する各行質量を単位矢に足せる。\(C\) 上の欠損は変わらないが、全単位で質量 \(1\) の密度にコンパクト台までは要求できない。例えば単位 groupoid \(G=X=\mathbb N\) では、\(D_{J_\lambda}^\sharp=0\) でもそのような密度は存在しない。
+
+コンパクト集合と誤差で添字づけたネットが [Anantharaman-Delaroche–Renault（2000）](https://www.unige.ch/math/EnsMath/en/monographies/monographie-no-36) の Proposition 2.2.13(i)–(ii) に対応する局所 Reiter 条件を直接与える。上の構成には第二可算性を使わないが、一般にネットを列で置き換えることはできない。非コンパクト版の反対向きや Lean 検証は、ここでは主張しない。
