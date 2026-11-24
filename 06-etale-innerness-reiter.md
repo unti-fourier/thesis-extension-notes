@@ -126,3 +126,15 @@ ample の場合は \(b_j=1_{B_j}\) を取ればよい。被覆の重なりはこ
 従ってこの欠損は \(0\) に収束する。全 \(p\) に共通の弱スター部分ネットで \(\Sigma:P\to A^{**}\) を取り、\(R^{**}\Sigma=\kappa_P\)、\(L_a^{**}\Sigma=\Sigma M_a\) を得る。\(\kappa_AJ-\Sigma\) は \(\ker R^{**}\cong K^{**}\) に値を取り、\(K^\sharp\) に制限すると \(D_J^\sharp\) の実装元になる。
 
 **切断の選択。** 任意の有界線形切断 \(J\) について、\(B(p)(\eta)=\eta((J-J_\lambda)p)\) とすれば \(D_J^\sharp-D_{J_\lambda}^\sharp=\operatorname{ad}_B\)。従って上の同値は、対角切断に限らず各 \(J\) で成立する。非コンパクト版の両向きと切断変更は独立に書面で検算した。上記の Lean 検証はコンパクト単位空間に限る。
+
+## 非 étale：一般の Haar 系での順方向
+
+**書面検算のみ。** 局所コンパクト Hausdorff groupoid と full continuous left Haar 系に対し、局所 Reiter 場があれば、上と同じ \(S_i(p)=(p\circ r)q_i\) の手順で \(C_0(X)\to A_r^{**}\) の contractive な equivariant section が得られる。有界線形な右逆 \(J:C_0(X)\to A_r\) があれば \(D_J^\sharp\) は inner である。ここでは bisection を使わない。
+
+確率場が Haar 密度を持たない場合は、まず一つの連続 Radon 確率場をコンパクトな単位テスト上で cutoff し、質量損失を一様に小さくする。切り出した矢の始点上で Haar 行質量が \(1\) になる非負の連続コンパクト台の密度を選び、その密度で右から畳み込む。連続性はコンパクトな同一 range の矢対上で積分核を有限和で近似して従い、台もコンパクトになる。右畳み込みは左移動と可換で全変動を増やさない。元の欠損と各端点の質量損失が \(\delta\) 未満なら欠損は \(3\delta\) 未満で、指定単位上で質量を厳密に \(1\) に直しても \(5\delta\) 未満である。
+
+\(X\) がパラコンパクトなら、full Haar 系の局所 bump を質量で正規化し、局所有限な \(1\) の分割で貼り合わせて \(Rh=1\) の連続非負密度を作れる。\(p\in C_c(X)\) では \((p\circ r)h\) に寄与する項は有限個なので、これで \(C_0(X)\to A_r\) の等長切断を得る。
+
+特に pair groupoid \(G=X\times X\) で \(\lambda^x=\delta_x\otimes\mu\) とし、\(\rho\in C_c(X)_+\)、\(\int\rho\,d\mu=1\) とすれば、\(J_\rho p(x,y)=p(x)\rho(y)\) は等長かつ equivariant で、\(D_{J_\rho}^\sharp=0\) である。これは \(\mu\) が無原子的で、単位矢上の密度で切断を作れない場合にも成立する。
+
+この一般 Haar 系での結果は順方向に限る。非 étale の逆向き、両側 \(I\)-ノルム、通常の Banach amenability、Lean 検証はいずれも主張しない。
