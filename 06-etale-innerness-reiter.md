@@ -137,4 +137,36 @@ ample の場合は \(b_j=1_{B_j}\) を取ればよい。被覆の重なりはこ
 
 特に pair groupoid \(G=X\times X\) で \(\lambda^x=\delta_x\otimes\mu\) とし、\(\rho\in C_c(X)_+\)、\(\int\rho\,d\mu=1\) とすれば、\(J_\rho p(x,y)=p(x)\rho(y)\) は等長かつ equivariant で、\(D_{J_\rho}^\sharp=0\) である。これは \(\mu\) が無原子的で、単位矢上の密度で切断を作れない場合にも成立する。
 
-この一般 Haar 系での結果は順方向に限る。非 étale の逆向き、両側 \(I\)-ノルム、通常の Banach amenability、Lean 検証はいずれも主張しない。
+逆方向は次節で示す。
+
+
+## 一般の Haar 系での逆方向
+
+**独立書面検算済み。** 同じ局所コンパクト Hausdorff groupoid、full continuous left Haar 系、片側 range 完備化を用いる。固定した有界線形切断 \(J:C_0(X)\to A_r\) があるとき、指定 derivation \(D_J^\sharp\) の innerness は、任意のコンパクト \(L\subset X\)、\(C\subset G\)、\(\varepsilon>0\) について
+\[
+ q\in C_c(G)_+,\qquad Rq\le1,\qquad Rq=1\ \text{on }L\cup s(C)\cup r(C),\qquad
+ \sup_{\gamma\in C}d_q(\gamma)<\varepsilon
+\]
+を与える。前節の順方向と合わせ、同じ \(J\) に対する innerness と局所 Reiter 条件が同値になる。第二可算性もパラコンパクト性もこの逆向きには不要である。パラコンパクト性は前節で切断の存在を保証するための十分条件であり、ここでの定理は切断を仮定する。
+
+**零質量テストに対する有界な入力行。** 実装元を \(T:C_0(X)\to(K^\sharp)^*\) とし、\(B=\|J\|+\|T\|\) とおく。有限個の \(f_j\in C_c(G)\cap\ker R\) を与え、\(0\le u\le1\) をそれらの台の始点と指定されたコンパクト単位集合の上で \(1\) となるよう \(C_c(X)\) に選ぶ。このとき \(M_{f_j}u=Rf_j=0\) である。任意の \(\Phi\in A_r^*\) に対し、実装等式には \((\Phi|_K)\circ L_e|_K\in K^\sharp\) を代入する。ここで \(e\in C_c(G)_+\) は \(\|e\|_r\le1\) かつ各 \(e\ast f_j\to f_j\) となる局所左近似単位である。この近似は、有限個の台の range 上で \(Re=1\) とし、関数の行差が一様に小さくなる単位矢の近傍に \(e\) を取れば得られる。行差の一様評価は共通のコンパクト台上での連続性と Haar 行質量の有界性による。極限を取ると
+\[
+ \Phi(f_j\ast Ju)=T(u)\big((\Phi|_K)\circ L_{f_j}|_K\big).
+\]
+\(\Phi|_K\) 自体が \(K^\sharp\) に属すると仮定する必要はない。
+
+\(T(u)\) を Hahn–Banach で \(K^{**}\) に同ノルム延長し、Goldstine で \(K\) の半径 \(\|T(u)\|\) の球から近似する。上の等式により、有限積で \((f_j\ast(Ju-k))_j\) は弱く零へ近づく。共通の凸結合を取ると、すべてのテストを同時に任意の精度で小さくできる \(Ju-k\) が得られる。質量は \(u\)、ノルムは \(B\) 以下である。これを \(v\in C_c(G)\) でノルム近似し、\(\psi=u-Rv\) の台上で \(Rg=1\) となる \(g\in C_c(G)_+\) を選んで \(z=v+(\psi\circ r)g\) と補正する。補正のノルムは \(\|\psi\|_\infty\) なので、\(Rz=u\)、\(\|z\|_r\le B+1\) を保ったまま \(\max_j\|f_j\ast z\|_r\) を任意に小さくできる。上界 \(B+1\) はテストと精度に依存しない。
+
+**左平滑化と有限被覆。** \(0\le Rh\le1\)、\(Rh=1\) on \(L\cup s(C)\cup r(C)\) となる \(h\in C_c(G)_+\) を先に選ぶ。full support を使い、指定単位矢上で正になる有限個の bump を足し、行質量で割って単位空間の cutoff を掛ければよい。左 Haar 不変性で変数を移すと、\(\Lambda_\gamma(h\ast z)_{s\gamma}-(h\ast z)_{r\gamma}\) は、第1因子を \(G^{r\gamma}\) 上の
+\(h(\gamma^{-1}\eta)-h(\eta)\) に置き換えた行積分になる。この因子の行質量は \(Rh(s\gamma)-Rh(r\gamma)=0\) である。
+
+その共通のコンパクト台を覆う矢 cutoff の台を \(F\) とする。各基準矢でこの因子を閉ファイバーから \(F\) に台を持つ連続関数に延長し、\(h\) の適切な \(r\)-方向の倍数を引く。これで基準ファイバー上の値を変えず、全ファイバーで質量零にできる。同じ range を持つ矢対のコンパクト集合上で連続性を使い、有限部分被覆を取る。任意の \(\tau>0\) に対し、こうして得た有限個の零質量テスト \(f_j\) は
+\[
+ \sup_{\gamma\in C} d_{h\ast z}(\gamma)
+ \le \max_j\|f_j\ast z\|_r+\tau\sup_{y\in s(F)}\|z_y\|_1
+\]
+を満たす。積分誤差の評価には左移動の等長性を用いる。\(F\) とノルム上界が先に固定されているので、先に \(\tau\) を小さくし、その後で有限テストと \(z\) を選べる。
+
+最後に \(u=1\) on \(s(F)\) を入力行に課す。すると \(b=h\ast z\) に対して \(Rb=Rh\) が全単位で成立する。\(q=|b|/(\max\{1,R|b|\}\circ r)\) と正値化すれば、指定単位で \(Rq=1\) となる。\(C\) 上では両端で絶対値の行質量が少なくとも \(1\) で、その質量差は \(d_b(\gamma)\) 以下なので、\(d_q(\gamma)\le2d_b(\gamma)\) である。これで任意の指定精度が得られる。
+
+一般 Haar 系に関するこの同値は書面の段階であり、Lean 検証、両側 \(I\)-ノルム、通常の Banach amenability は主張しない。局所 Reiter 条件の典拠は [Anantharaman-Delaroche–Renault（2000）](https://www.unige.ch/math/EnsMath/en/monographies/monographie-no-36), Proposition 2.2.13 (i)–(ii) である。同書の第二可算性の仮定と、ここでの直接の行ノルム計算の仮定は区別する。
