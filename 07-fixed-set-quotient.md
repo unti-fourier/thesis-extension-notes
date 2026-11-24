@@ -97,3 +97,33 @@ The retraction criterion is [Anantharaman-Delaroche (1987), Theorem 4.9 and Rema
 For instance, on the free-group boundary \(X=\partial F_2\), the \(F_2\) action passes the test, whereas the \(F_2\times F_2\) action through its first factor does not: a retraction for the latter would give an invariant mean on the second factor. Neither action has an invariant probability.
 
 This result was independently checked in writing. No Lean verification or priority claim is made.
+
+## Matrix-valued coefficients: central versus all positive tests
+
+Let \(A=M_n(C(X))\) carry an arbitrary action \(\alpha\) of the discrete group \(\Gamma\), and let \(B_\mu=A\rtimes_{\alpha,\mu}\Gamma\) be the full or reduced crossed product. In a unital contractive Banach \(B_\mu\)-bimodule \(E\), consider
+\[
+ \left(\sum_j\|\xi a_j\|^2\right)^{1/2}\le
+       \left\|\sum_j a_j\right\|\,\|\xi\|
+\]
+for every finite family of positive contractions from either \(Z(A)\) or all of \(A\). The two resulting universal innerness predicates agree: for each \(\mu\), they are equivalent to topological amenability of the induced action on \(X\) and to nuclearity of \(B_\mu\). The two classes of admissible coefficients, however, need not agree.
+
+**A common test.** Use the preceding regular-diagonal construction with \(M=A^{**}\), \(Z=Z(M)\), \(N=\ell^\infty(\Gamma,Z)\), and \(S=\mathcal B(\ell^2\Gamma)\bar\otimes M\). Form the quotient by the *central* constants and impose the two balancing relations from the preceding section over \(Z\), rather than over \(M\). The corresponding derivation is again \(\Delta_\alpha(b)(qF)=[b,d(F)]\). In the normal predual estimate, polar decomposition gives, for arbitrary \(b_j\in S\),
+\[
+ \left(\sum_j\|\omega\circ L_{b_j}\|^2\right)^{1/2}
+ \le \|\omega\|\left\|\sum_j b_jb_j^*\right\|^{1/2}.
+\]
+For positive \(a_j\), set \(c=\|\sum_j a_j\|\). Functional calculus gives \(\sum_j a_j^2\le c\sum_j a_j\le c^2 1\) without commutativity. The bound passes through the Banach projective norm and through the quotient using a common lift. Thus the test qualifies even for the all-positive condition, with constant \(1\).
+
+An implementer \(T\) makes \(d(F)-T(qF)\) commute with the represented crossed product. Its identity-coordinate diagonal entry commutes with \(A\) and hence lies in \(Z\); commutation with the group unitaries makes all diagonal entries equal. As in the preceding section, taking the order modulus and normalizing gives a central equivariant retraction. Conversely such a retraction gives \(T(qF)=d(F)-1\otimes P(F)\). The center here is \(C(X)^{**}I_n\), with its induced action, so the retraction tests topological amenability even with nontrivial fiber automorphisms. See [Anantharaman-Delaroche (1987), Theorem 4.9 and Remark 4.10](https://link.springer.com/article/10.1007/BF01461725) and [Ozawa–Suzuki (2021), Theorem 3.2](https://link.springer.com/article/10.1007/s00029-021-00699-2). For an amenable center action, the finite-support completely positive factorizations use central coefficients and matrices over the nuclear algebra \(A\). They give nuclearity of both crossed products; [Haagerup (1983)](https://doi.org/10.1007/BF01394315) then gives innerness for all contractive coefficients. In the reverse direction even the all-positive universal predicate implies innerness of the distinguished test.
+
+For the standard amplification \(\alpha=\operatorname{id}_{M_n}\otimes\sigma\), this test is entrywise the scalar derivation. Scalar implementers amplify by \(I_n\otimes T\). Conversely an implementer must commute with the constant matrix units because the derivation vanishes on those units, so the \((1,1)\) corner recovers a scalar implementer with the same norm. This explicit correspondence is for the standard amplification, not arbitrary fiber actions.
+
+**The coefficient class is not recovered by taking corners.** For \(A=M_2\) and \(X\) a point, the center condition is automatic. The regular bimodule with operator norm fails the all-positive condition: take \(\xi=1\), \(a_1=e_{11}\), \(a_2=e_{22}\), giving \(\sqrt2>1\). With Hilbert–Schmidt norm the same matrix space satisfies the all-positive condition by the estimate on \(\sum_j a_j^2\).
+
+A stronger obstruction uses \(D=C(\mathbb T)\), the crossed product of the trivial \(\mathbb Z\)-action on a point. Its regular bimodule with the supremum norm qualifies on the scalar side. In any all-positive coefficient for the standard amplification \(M_2(D)\), let \(p=e_{11}\) and \(y\in pEp\). Apply the estimate for \(e_{11},e_{22}\) to \(y(e_{11}b+e_{12}c)\). Matrix units identify the two right corners isometrically, giving
+\[
+ \|yb\|^2+\|yc\|^2\le\|y\|^2\|bb^*+cc^*\|.
+\]
+Induction with \(h=(\sum_{i<m}b_i b_i^*+\varepsilon1)^{1/2}\) and \(h^{-1}b_i\), then \(\varepsilon\downarrow0\), gives the same estimate for any finite row. A right module embedding \(J:D\to pEp\) bounded below by \(c_0>0\) would therefore satisfy \(m c_0^2\le\|J1\|^2\), using \(m\) disjointly supported positive norm-one functions. Thus even allowing equivalent norms does not make this scalar coefficient obtainable by the standard corner functor. The result is about that functor, not a claim about every possible equivalence of categories.
+
+This extension was independently checked in writing. No Lean verification, priority claim, or general nuclearity characterization for arbitrary noncommutative coefficient algebras is made.
