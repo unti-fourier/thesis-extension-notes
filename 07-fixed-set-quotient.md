@@ -69,4 +69,31 @@ The functional \(\nu(T\otimes_B\xi)=\langle T\xi,\Omega\rangle\) restricts along
 
 For example, let \(F_2\times C_2\) act on two points by the second factor. There are no common fixed points, but at \(p=2\) this gives a non-inner derivation. In its reduced model \(M_2(C_r^*(F_2))\), the witness can also be constructed with first tensor factor \(M_2(\mathcal B(\ell^2F_2))\); restricting to a rank-one matrix corner recovers half the scalar witness, the factor coming from the normalized matrix trace.
 
-The endpoint argument was independently checked in writing, not formalized in Lean. It does not settle the converse when there is no invariant probability.
+The endpoint argument was independently checked in writing, not formalized in Lean. The next section removes the invariant-probability hypothesis with a different coefficient module.
+
+## A single right-\(\ell^2\) derivation tests topological amenability
+
+For an arbitrary discrete \(\Gamma\) and nonempty compact Hausdorff \(X\), with no invariant probability assumed, topological amenability of the action is equivalent to each of the following, for either crossed product: nuclearity; innerness of every bounded derivation into the dual of every two-sided essential contractive right-\(\ell^2\) bimodule; and innerness of the single derivation below. The same test works for every finite \(p\ge2\), since the \(\ell^2\) coefficient also satisfies the \(\ell^p\) estimate.
+
+Let \(M=C(X)^{**}\), \(N=\ell^\infty(\Gamma,M)\), and \(S=\mathcal B(\ell^2\Gamma)\bar\otimes M\). Use the regular representation \(\pi(f)_{t,t}=\alpha_{t^{-1}}(f)\), \(u_g=\lambda_g\otimes1\). Write \(q:N\to U=N/\iota(M)\), where \(\iota\) is the constant inclusion, and \(i(m)=1\otimes m\). Set
+\[
+(\beta_ga)(t)=\alpha_g(a(g^{-1}t)),\qquad
+(\gamma_g y)_{s,t}=\alpha_g(y_{sg,tg}),\qquad
+d(a)_{s,t}=\mathbf1_{\{s=t\}}a(t^{-1}).
+\]
+The dual coefficient consists of bounded maps \(T:U\to S\) satisfying \(T(mx)=i(m)T(x)\) and \(T\bar\beta_g=\gamma_gT\). Its predual is the quotient of \(U\widehat\otimes_\pi S_*\) by the closed span of
+\[
+mx\otimes\omega-x\otimes(\omega\circ L_{i(m)}),\qquad
+\bar\beta_gx\otimes\omega-x\otimes(\omega\circ\gamma_g).
+\]
+The bimodule action on the dual is pointwise multiplication. It passes to the quotient predual since \(i(M)\) is central and \(\gamma_g\) fixes the represented crossed product pointwise.
+
+For a positive family \(F_j=\pi(f_j)\), the predual right action is \(\omega\mapsto\omega\circ L_{F_j}\). If \(\omega(y)=\varphi(yv)\) is a polar decomposition, Cauchy–Schwarz gives \(\|\omega\circ L_{F_j}\|^2\le\|\omega\|\varphi(F_j^2)\). Summation and \(\sum F_j^2\le(\sum F_j)^2\) give the required estimate on \(S_*\). It passes through the projective norm by the triangle inequality in \(\ell^2\), and through the quotient by using one lift for all \(j\).
+
+The derivation is \(\Delta_r(b)(q(a))=[b,d(a)]\). It is well defined because \(d\iota=i\); the two relations hold because \(d\) is \(M\)-linear and \(d\beta_g=\gamma_gd\). If \(\Delta_r=\operatorname{ad}_T\), then \(d(a)-T(q(a))\) commutes with the regular group unitaries, so all diagonal entries agree. Its \((e,e)\) entry gives a bounded unital \(M\)-linear equivariant map \(L:N\to M\). On selfadjoint elements let \(L_0=\operatorname{Re}L\). The order modulus \(V(x)=\sup_{-x\le y\le x}L_0(y)\), for \(x\ge0\), is additive by decomposition of order intervals. It is equivariant and \(M\)-linear by the order identities for positive invertibles and then continuity. Thus \(V(1)^{-1}V\) is a unital positive equivariant \(M\)-module retraction. Neither \(T\) nor this retraction is assumed normal. Conversely a retraction \(P\) of this kind gives the implementer \(T(q(a))=d(a)-i(P(a))\).
+
+The retraction criterion is [Anantharaman-Delaroche (1987), Theorem 4.9 and Remark 4.10](https://link.springer.com/article/10.1007/BF01461725); see also [Ozawa–Suzuki (2021), Theorem 3.2](https://link.springer.com/article/10.1007/s00029-021-00699-2). Amenability of the action gives nuclearity for both crossed products and equality of their norms, by finite-support completely positive factorizations through matrices over \(C(X)\). See [Anantharaman-Delaroche (2002)](https://arxiv.org/abs/math/0005014). Nuclearity implies Banach amenability by [Haagerup (1983), Theorem 3.1](https://doi.org/10.1007/BF01394315), hence innerness for all the stated coefficients. For the full crossed product, pull back \(\Delta_r\) and its coefficient along the canonical surjection; surjectivity preserves non-innerness.
+
+For instance, on the free-group boundary \(X=\partial F_2\), the \(F_2\) action passes the test, whereas the \(F_2\times F_2\) action through its first factor does not: a retraction for the latter would give an invariant mean on the second factor. Neither action has an invariant probability.
+
+This result was independently checked in writing. No Lean verification or priority claim is made.
