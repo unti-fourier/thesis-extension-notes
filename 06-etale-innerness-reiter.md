@@ -98,9 +98,9 @@ ample の場合は \(b_j=1_{B_j}\) を取ればよい。被覆の重なりはこ
 非空コンパクト単位空間をもつ局所コンパクト Hausdorff étale groupoid、所与の full continuous 左 Haar 系、片側 range ノルム、上記の特定の derivation が対象である。第二可算性は仮定しない。一般の非 étale Haar 系、非コンパクト単位空間、両側 \(I\)-ノルム、通常の Banach amenability に関する主張ではない。[Anantharaman-Delaroche–Renault（2000）](https://www.unige.ch/math/EnsMath/en/monographies/monographie-no-36)、Definitions 2.2.1–2.2.2、2.2.8 および Proposition 2.2.13 は標準の従順性の定式化を与える（同書の第二可算性仮定とは区別した）。
 
 
-## 非コンパクトな単位空間：innerness から局所 Reiter 条件へ
+## 非コンパクトな単位空間：innerness と局所 Reiter 条件
 
-**以下は書面検算のみ。** \(X\) のコンパクト性を外し、\(P=C_0(X)\) とする。他の groupoid と Haar 系の仮定、range ノルム、制限テストは同じとする。任意の切断でなく、単位矢上に \(J_\lambda p(1_x)=p(x)/c(x)\) と置く対角切断を使う。ここで \(D_{J_\lambda}^\sharp\) が inner なら、任意のコンパクト \(L\subset X\)、\(C\subset G\)、\(\varepsilon>0\) に対し \(q\in C_c(G)_+\) が存在し、
+**以下は書面検算のみ。** \(X\) のコンパクト性を外し、\(P=C_0(X)\) とする。他の groupoid と Haar 系の仮定、range ノルム、制限テストは同じとする。まず、単位矢上に \(J_\lambda p(1_x)=p(x)/c(x)\) と置く対角切断を使う。ここで \(D_{J_\lambda}^\sharp\) が inner なら、任意のコンパクト \(L\subset X\)、\(C\subset G\)、\(\varepsilon>0\) に対し \(q\in C_c(G)_+\) が存在し、
 \[
 0\le Rq\le1,\qquad Rq=1\ \text{on } L\cup s(C)\cup r(C),\qquad
 \sup_{\gamma\in C}d_q(\gamma)<\varepsilon
@@ -115,4 +115,14 @@ ample の場合は \(b_j=1_{B_j}\) を取ればよい。被覆の重なりはこ
 
 \(q=|w|/\max\{1,(R|w|)\circ r\}\) とすれば、指定集合で行質量は厳密に \(1\) になり、\(C\) 上の欠損は高々 \(2\sup_C d_w\) である。全単位で確率測度が必要なら不足する各行質量を単位矢に足せる。\(C\) 上の欠損は変わらないが、全単位で質量 \(1\) の密度にコンパクト台までは要求できない。例えば単位 groupoid \(G=X=\mathbb N\) では、\(D_{J_\lambda}^\sharp=0\) でもそのような密度は存在しない。
 
-コンパクト集合と誤差で添字づけたネットが [Anantharaman-Delaroche–Renault（2000）](https://www.unige.ch/math/EnsMath/en/monographies/monographie-no-36) の Proposition 2.2.13(i)–(ii) に対応する局所 Reiter 条件を直接与える。上の構成には第二可算性を使わないが、一般にネットを列で置き換えることはできない。非コンパクト版の反対向きや Lean 検証は、ここでは主張しない。
+コンパクト集合と誤差で添字づけたネットが [Anantharaman-Delaroche–Renault（2000）](https://www.unige.ch/math/EnsMath/en/monographies/monographie-no-36) の Proposition 2.2.13(i)–(ii) に対応する局所 Reiter 条件を直接与える。上の構成には第二可算性を使わないが、一般にネットを列で置き換えることはできない。以下で反対向きも示す。
+
+
+**局所 Reiter 条件から innerness へ。** 上の密度をネット \(q_i\) とし、\(S_i(p)=(p\circ r)q_i\) と置く。\(0\le Rq_i\le1\) より \(S_i\) は contractive であり、\(p\in C_0(X)\) の各正のレベル集合はコンパクトなので \(RS_i(p)\to p\) はノルム収束する。\(a\in A\) と \(b\in C_c(G)\) に対して
+\[
+\|L_aS_i-S_iM_a\|_{P\to A}
+\le 2\|a-b\|_r+\|b\|_r\sup_{\gamma\in\operatorname{supp}b}d_{q_i}(\gamma).
+\]
+従ってこの欠損は \(0\) に収束する。全 \(p\) に共通の弱スター部分ネットで \(\Sigma:P\to A^{**}\) を取り、\(R^{**}\Sigma=\kappa_P\)、\(L_a^{**}\Sigma=\Sigma M_a\) を得る。\(\kappa_AJ-\Sigma\) は \(\ker R^{**}\cong K^{**}\) に値を取り、\(K^\sharp\) に制限すると \(D_J^\sharp\) の実装元になる。
+
+**切断の選択。** 任意の有界線形切断 \(J\) について、\(B(p)(\eta)=\eta((J-J_\lambda)p)\) とすれば \(D_J^\sharp-D_{J_\lambda}^\sharp=\operatorname{ad}_B\)。従って上の同値は、対角切断に限らず各 \(J\) で成立する。非コンパクト版の両向きと切断変更は独立に書面で検算した。上記の Lean 検証はコンパクト単位空間に限る。
