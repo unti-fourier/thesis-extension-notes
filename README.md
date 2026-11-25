@@ -14,6 +14,7 @@
 | 5 | [Sharp Reiter radius profile of a free group boundary](05-free-group-boundary-radius-profile.md) | Exact range-only value 2/(R+1), verified in writing; full I-defect not covered. |
 | 6 | [Symmetric local probability kernels](06-symmetric-local-haar-kernels.md) | Pair-groupoid and general compact-unit Haar kernel existence checked in Lean. |
 | 6 | [Innerness and Reiter fields for étale groupoids](06-etale-innerness-reiter.md) | Written-checked equivalence for a specified derivation with compact units; not fully formalized. |
+| 6 | [A Johnson-type criterion for Hausdorff étale groupoids](06-etale-essential-core.md) | All derivations with right type (M) on the essential core, for any full continuous left Haar system; written proof, not formalized. |
 | 7 | [Uniformly bounded stabilizers and matrix reconstruction](07-uniformly-bounded-stabilizers.md) | Written proof independently checked; no Lean verification or priority claim. |
 | 7 | [Right-ℓ¹ coefficients and the fixed-set quotient](07-fixed-set-quotient.md) | Written-checked annihilator formula for full and reduced crossed products; contrasts with the row-norm algebra. |
 
