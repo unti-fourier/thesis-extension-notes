@@ -22,6 +22,7 @@
 | 6 | [Norm-one Banach amenability for L¹ group bundles](06-amenable-group-bundle-diagonals.md) | Written-checked diagonal in the ordinary projective norm for amenable fibers, without local triviality or compactness; not formalized. |
 | 6 | [Locally lifted extensions by variable amenable groups](06-locally-lifted-variable-amenable-kernels.md) | Written-checked extension to arbitrary amenable Haar fibers, including noncompact ones; ample quotients supply lifts automatically. |
 | 6 | [Topological amenability and approximate continuous primitives](06-continuous-bounded-cocycles.md) | Written-checked approximate criterion in all positive degrees, global-norm properness test, and ample counterexample to exact vanishing; not formalized. |
+| 6 | [Exact bounded cohomology in degree one for Hausdorff étale groupoids](06-etale-bidual-bounded-cohomology.md) | Written-checked amenability criterion using biduals of section spaces and a single cocycle; not formalized. |
 | 7 | [Uniformly bounded stabilizers and matrix reconstruction](07-uniformly-bounded-stabilizers.md) | Written proof independently checked; no Lean verification or priority claim. |
 | 7 | [Right-ℓ¹ coefficients and the fixed-set quotient](07-fixed-set-quotient.md) | Written-checked annihilator formula for full and reduced crossed products; contrasts with the row-norm algebra. |
 
