@@ -53,3 +53,16 @@ has coefficients \(0,-q,1\) at lengths below \(j\), equal to \(j\), and equal to
 For the integrated objective alone, take \(R=1\), the quotient \(F_r\to\mathbb Z/(2r+1)\) with \(a_i\mapsto i\), and \(f=\mathbf1_{\{\overline0\}}\). The ball maps bijectively onto the quotient, so \(T_{B_1}f=1\) and the field of point masses minimizes the integrated objective. At \(x=\overline1\) and \(s=a_1\) its shifted mass is at \(a_1^2\) outside \(B_1\), so the supremum defect is \(2\). Pullback gives the same distinction on the profinite completion.
 
 The scalar lower bound is the Cayley-tree edge count and coarea. The additional conclusion here is the classification of the equality case for continuous fields. The defect convention agrees with [Nowak (2008), Definition 3.1](https://doi.org/10.1016/j.aim.2008.04.012) after reindexing, while Definition 3.2 optimizes support cardinality at a prescribed error. This section was independently checked in writing; no Lean verification, full \(I\)-norm statement, or priority claim is made.
+
+## Testing all words of length at most two
+
+At \(R=1\), testing all words of length at most two instead of generators alone changes the boundary value to
+\[
+ \inf_p\ \max_{|g|\le2}\sup_x\|g p_x-p_{gx}\|_1
+ =\frac{2(4r-1)}{4r+1}.
+\]
+In fact this holds for any nonempty action space. Write \(d=2r\) and let \(t=1-\varepsilon/2\) for a field with defect \(\varepsilon\). Every test then has overlap (sum of pointwise minima) at least \(t\). For each \(s\in S\), the only shared coordinate in \(B_1\cap s^2 B_1\) is \(s\). Testing at \(s^{-2}x\) therefore gives \(p_x(s)\ge t\) for every \(x\). Thus \(p_x(e)\le1-dt\). A one-letter test at \(x\) has only two shared coordinates and its overlap is at most \(p_x(e)+p_{sx}(e)\le2(1-dt)\). Consequently \(t\le2/(2d+1)\).
+
+The constant field giving the center mass \(1/(2d+1)\) and each neighbor \(2/(2d+1)\) attains the bound: one-letter overlap consists of two contributions \(1/(2d+1)\), and two-letter overlap is a single midpoint of mass \(2/(2d+1)\). Equality in the one-letter bound forces both center masses to be \(1/(2d+1)\) at every test, so the neighbor masses must all equal their lower bound too. This gives uniqueness. The value is \(14/9\) for \(F_2\). In contrast, the ray field at \(\xi=s^\infty\), tested against \(s^2\), has disjoint supports and defect \(2\). Radius zero leaves only one possible field, so radius one is the first failure of optimality of the ray field for this test set.
+
+This extension of the calculation was independently checked in writing; no Lean, full \(I\)-defect or priority claim is made.
