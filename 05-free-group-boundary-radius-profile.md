@@ -115,3 +115,31 @@ with masses outside the ball zero. The following table bounds the contributions 
 | \(J_{21}\) | 2 | \(4J_{11}\) | \(8D_1+14J_{21}\) |
 
 Summing gives \(13t\le 2Q_1+11Q_2\le7-12D_2-72D_3-6J_{11}-42J_{12}\le7\). If all mass is on the ray, \(Q_2\le(A_0+A_1+A_2+A_3)/2=1/2\), and the uniform ray field attains this overlap at the worst distance-two test. These are finite written certificates, independently checked; no Lean verification or priority claim is made.
+
+## A finite linear program for every radius and test length
+
+For every \(r\ge2\) and integers \(R,L\ge0\), the boundary defect with word ball support \(B_R\) and all tests \(|g|\le L\) is the minimum variation among arbitrary probability fields on the regular tree with the same support radius and distance tests. Both are computed by a finite rational linear program. In particular, there is a rational minimizer on the boundary depending only on the first \(R\) letters.
+
+Fix an end \(\omega\) and let \(P\) be its stabilizer in the full tree automorphism group with the topology of pointwise convergence. Its Busemann kernel is the increasing union of the compact subgroups fixing successive vertices of an \(\omega\)-ray; the quotient is \(\mathbb Z\), split by translation along a line to the end. See [Cartwright–Kaimanovich–Woess (1994), §2.D](https://www.numdam.org/item/10.5802/aif.1433.pdf#page=11). There is a left invariant mean on bounded continuous functions that are uniformly norm continuous under left translation. In fact, Haar averages over those increasing compact subgroups have a kernel-invariant weak-star cluster point. Averaging its translates along successive powers of the splitting translation preserves kernel invariance by normality, and any cluster point is also translation-invariant by the Cesàro end-term estimate.
+
+For an arbitrary vertex field \(\mu_v\), average the coordinates \(g\mapsto\mu_{g^{-1}v}(g^{-1}z)\) with this mean. Each is fixed under left multiplication by the open subgroup fixing \(v,z\), hence meets the required uniform continuity. The averaged row still has mass one by finite support, is supported in \(B(v,R)\), and has no larger variation on any pair at distance at most \(L\), by positivity and the triangle inequality on the finite union of the two balls. The field is \(P\)-equivariant. This argument does not use amenability of \(P\) with the discrete topology.
+
+An ordered pair of vertices is classified under \(P\) by the lengths \((i,j)\) of the two paths to the first common vertex of their rays to \(\omega\). Indeed, a correspondence on the two paths and their common tail extends by matching the rooted side trees. For \(i+j\le R\) let \(x_\alpha\), \(\alpha=(i,j)\), be the mass of each point of that type from the row's center, and \(n_\alpha\) its multiplicity. If \(q=2r-1\), these multiplicities are \(1\) for \(j=0\), \(q^j\) for \(i=0<j\), and \((q-1)q^{j-1}\) for \(i,j>0\). For each start-pair type \(\sigma\) of distance at most \(L\), let \(c^\sigma_{\alpha\beta}\) count common support points of types \(\alpha,\beta\) from the two starts. These integers are obtained by enumerating the radius-\(R\) balls about any representative pair.
+
+Maximize \(0\le t\le1\) subject to
+\[
+ x_\alpha\ge0,\quad \sum_\alpha n_\alpha x_\alpha=1,\qquad
+ 0\le y_{\alpha\beta}\le x_\alpha,\quad
+ y_{\alpha\beta}\le x_\beta,\qquad
+ \sum_{\alpha,\beta}c^\sigma_{\alpha\beta}y_{\alpha\beta}\ge t
+ \quad\text{for every }\sigma .
+\]
+The \(y\)'s can always be raised to their upper bounds, so this tests the exact overlaps. The optimum \(t^*\) gives defect \(2(1-t^*)\). Conversely, the LP field at an end \(\eta\) puts mass \(x_{(i,|z|-i)}\) at \(z\in B_R\), with \(i\) the common prefix length of \(z,\eta\). This is continuous and the comparisons for \(h\) are the tree comparison of starts \(e,h\) oriented toward the same end \(h\eta\). For the other inequality, any boundary field gives a vertex field by \(\mu_v=v p_{v^{-1}\omega}\). Thus the optimization values agree.
+
+There is also a finite dual certificate using only subsets \(U\) of the support-type set. Put \(n(U)=\sum_{\alpha\in U}n_\alpha\) and \(c^\sigma(U)=\sum_{\alpha,\beta\in U}c^\sigma_{\alpha\beta}\). For any normalized mass vector \(x\), integrating its level sets decomposes its overlaps into one convex combination of the overlap vectors \(c^\sigma(U)/n(U)\). Conversely, a convex combination of the corresponding normalized indicator vectors gives at least that combination of overlaps, by concavity of the minimum. Finite minimax therefore gives
+\[
+ t^*=\min_{\substack{w_\sigma\ge0\\\sum_\sigma w_\sigma=1}}
+     \max_{U\ne\varnothing}
+        \frac{\sum_\sigma w_\sigma c^\sigma(U)}{n(U)} .
+\]
+For the underlying graph optimization, see [Bell–Nagórko (2021 preprint), §2](https://arxiv.org/html/2109.04891#S2), applied to the graph of pairs at distance at most \(L\) and with the prescribed balls taken in the original tree. The finite orbit reduction above is checked in writing, not in Lean; no priority claim is made.
