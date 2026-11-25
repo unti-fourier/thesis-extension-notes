@@ -169,4 +169,6 @@ ample の場合は \(b_j=1_{B_j}\) を取ればよい。被覆の重なりはこ
 
 最後に \(u=1\) on \(s(F)\) を入力行に課す。すると \(b=h\ast z\) に対して \(Rb=Rh\) が全単位で成立する。\(q=|b|/(\max\{1,R|b|\}\circ r)\) と正値化すれば、指定単位で \(Rq=1\) となる。\(C\) 上では両端で絶対値の行質量が少なくとも \(1\) で、その質量差は \(d_b(\gamma)\) 以下なので、\(d_q(\gamma)\le2d_b(\gamma)\) である。これで任意の指定精度が得られる。
 
-一般 Haar 系に関するこの同値は書面の段階であり、Lean 検証、両側 \(I\)-ノルム、通常の Banach amenability は主張しない。局所 Reiter 条件の典拠は [Anantharaman-Delaroche–Renault（2000）](https://www.unige.ch/math/EnsMath/en/monographies/monographie-no-36), Proposition 2.2.13 (i)–(ii) である。同書の第二可算性の仮定と、ここでの直接の行ノルム計算の仮定は区別する。
+一般 Haar 系に関するこの同値全体は書面の段階であり、両側 \(I\)-ノルムや通常の Banach amenability は主張しない。局所 Reiter 条件の典拠は [Anantharaman-Delaroche–Renault（2000）](https://www.unige.ch/math/EnsMath/en/monographies/monographie-no-36), Proposition 2.2.13 (i)–(ii) である。同書の第二可算性の仮定と、ここでの直接の行ノルム計算の仮定は区別する。
+
+**一般 Haar 系での積分交換の Lean 検証。** 固定した矢 \(\gamma:y\to x\) に対し、\(\eta,\xi\in G^x\) 上で \(f(\eta)g(\eta^{-1}\xi)h(\xi^{-1}\gamma)\) を積分する二つの順序が等しいことを、実際の左 Haar 行測度 \(\lambda^x\) について検証した。両変数を \(\eta=\gamma b^{-1}\)、\(\xi=\gamma c^{-1}\) により \(G_y=s^{-1}(y)\) に移すと、核は \(f(\gamma b^{-1})g(bc^{-1})h(c)\) になる。そこでコンパクト台を持つ複素関数の積分を交換し、左 Haar 不変性で元の行へ戻す。全行の \(\sigma\)-有限性は仮定しない。Lean で通ったのはこの交換と測度輸送までで、一般の畳み込みの結合律や上の同値全体ではない。
