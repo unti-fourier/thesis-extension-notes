@@ -46,3 +46,25 @@ Define \(F(\infty)=0\) and \(F(k,j)=\min(j,2k-j)/k\) for \(0\le j<2k\). With tri
 Truncating \(F\) to the first \(M\) cycles gives continuous primitives of norm at most \(1\) for approximating coboundaries. On every compact set of arrows the labels \(n\) lie in a finite interval \([-L,L]\); the error is at most \(L/(M+1)\). In contrast, the uniform error over all arrows is at least \(1\) for the coboundary of any continuous \(v\): test the half-turn \((k,(k,0))\) and let \(k\) tend to infinity. The function \(F\) itself is a bounded Borel primitive, so the example does not obstruct measured vanishing. Nor does it obstruct dual-coefficient innerness: for example \(F\) defines an element of \(C(X)^{**}\) by integration against finite measures.
 
 For a circle-action example of the failure of exact continuity, see [Coronel, Navas and Ponce (2011 preprint), Example 2](https://arxiv.org/pdf/1101.3523#page=8). The exact real-coefficient theorem under minimality is given by [Renault (2011 preprint), Theorem 1.2](https://arxiv.org/pdf/1109.4322#page=2).
+
+## All positive degrees
+
+Use bounded continuous equivariant homogeneous cochains \(c(g_0,\ldots,g_n)\), on tuples with common range, with values in the coefficient fiber at that range. Write \(d\) for alternating deletion. Given continuous Reiter probabilities \(m_i\), put \(\mu_i(g)=g_*m_i^{sg}\). In degree \(n\ge1\), define
+\[
+ S_i^n c(g_0,\ldots,g_{n-1})
+ =\int c(h,g_0,\ldots,g_{n-1})\,d\mu_i(g_0)(h).
+\]
+The operator is contractive and equivariant since \(\mu_i(ag)=a_*\mu_i(g)\). For continuity, write \(h=g_0k\) and integrate against \(m_i^{sg_0}\) on the variable \(k\). Near a given tuple, a fixed compactly supported cutoff in \(k\) captures all but arbitrarily small mass. On the remaining compact set of compatible pairs of tuples and \(k\), approximate the integrand by local sections times scalar weights. Uniformly approximate the scalar weights by sums of products of scalar functions of the tuple and of \(k\), keeping the common cutoff. Each term integrates continuously. This is the same local Bochner argument as in degree one.
+
+On \(\mathbf g=(g_0,\ldots,g_n)\), the identity is
+\[
+ ((dS_i^n+S_i^{n+1}d)c-c)(\mathbf g)
+   =\int c(h,g_1,\ldots,g_n)\,d(\mu_i(g_1)-\mu_i(g_0))(h).
+\]
+Deleting the inserted \(h\) gives \(c\); all terms cancel except for the face that deletes \(g_0\), where the measure changes. The norm of this error is at most \(\|c\|_\infty\) times the Reiter defect at \(g_0^{-1}g_1\). That arrow depends continuously on the tuple. Thus every cocycle in every positive degree is approximated by coboundaries, uniformly on each compact tuple set, with the same primitive norm bound as before. Degree one contains the converse: use \(C_b(g_0,g_1)=b(g_0)-b(g_1)\) and restrict the degree-zero primitive to units. For comparison, [Crainic (2003), Proposition 1](https://arxiv.org/pdf/math/0008064#page=13) uses an exact averaging homotopy for the differentiable cohomology of proper Lie groupoids.
+
+## What changes with a global sup norm
+
+If the single witness \(b_p\) has even one approximating coboundary of global sup error less than \(1/4\), the normalized probabilities in the proof above have TV defect less than \(1/2\) on all arrows. On any compact set \(L\subset X\), choose a common compact \(K\subset G\) carrying more than \(7/8\) of each probability over \(L\). This follows by continuous compact cutoffs and a finite subcover of \(L\). For an arrow \(\gamma\) with both endpoints in \(L\), the subsets \(K\cap G^{r\gamma}\) and \(\gamma(K\cap G^{s\gamma})\) must intersect: otherwise the signed difference assigns more than \(3/4\) to the first set. Hence \(\gamma\in KK^{-1}\), which is compact. The endpoint condition is closed, so \((r,s)^{-1}(L\times L)\) is compact. It follows that \(G\) is proper.
+
+Conversely, for a second-countable proper groupoid under the stated Hausdorff and full Haar hypotheses, [Tu (2004), Theorem 6.3](https://www.maths.tcd.ie/EMIS/journals/DMJDMV/vol-09/26.pdf#page=22) supplies a nonnegative continuous cutoff \(a\) with \(\int a(sh)\,d\lambda^x(h)=1\) and with \(r\) proper on the support of \(a\circ s\). The continuous row density \(q_x(h)=a(sh)\) is exactly invariant. Therefore \(p-q\) is an exact \(V\)-valued primitive of \(b_p\). In particular, within this class the global sup-norm criterion detects properness, whereas the compact-open criterion detects amenability.
