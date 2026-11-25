@@ -1,0 +1,50 @@
+# Locally lifted extensions by amenable locally compact kernels
+
+**Work in progress.** Written-checked research note for a possible future paper, not a submission, preprint, peer-reviewed result, or profile entry. No priority or Lean verification claim.
+
+Let \(\pi:\Sigma\to H\) be an extension of locally compact Hausdorff groupoids, identical on the nonempty unit space \(X\), with \(H\) étale and kernel isomorphic as a topological group bundle to \(X\times K\). Assume \(K\) is an amenable locally compact Hausdorff group, and each arrow of \(H\) has an open bisection neighborhood with a continuous lift to \(\Sigma\). Use the torsor Haar system described below and let \(A\) be its untwisted one-sided range-norm convolution completion. Then \(H\) is topologically amenable if and only if \(\Sigma\) is, if and only if every bounded derivation \(A\to E^*\) is inner for every contractive bimodule \(E\) whose essential core \(\overline{\operatorname{span}}AEA\) has right diagonal type (M) as in the [compact-kernel note](06-compact-kernel-local-lifts.md). There is no compactness or unimodularity requirement on \(K\).
+
+## The torsor measures and point-mass multipliers
+
+For a bisection lift \(\tau\) and a base arrow \(h\), transport the left Haar measure \(dk\) of \(K\) by the right coordinate \(k\mapsto\tau(h)k\), to a measure \(\omega_h\) on \(\pi^{-1}(h)\). Substituting another lift changes the coordinate by left translation in \(K\), so this is well defined. Summing over the base range row gives a full continuous left Haar system: left translation preserves these measures, and a compactly supported test splits into finitely many local charts with compact \(K\)-coordinate supports.
+
+Set \((\operatorname{Ad}_{\sigma^{-1}})_*dk=J(\sigma)dk\), where conjugation transports the range kernel to the source kernel. Then right translation by \(\sigma\) takes \(\omega_l\) to \(J(\sigma)\omega_{l\pi(\sigma)}\). The factor is continuous: integrate one compactly supported function of Haar integral one against the transported measure, and use a common compact bound on the coordinate supports on each compact parameter neighborhood.
+
+For \(f\in C_c(U)\), let \(m_f\) be the point mass of weight \(f(h)\) at \(\tau(h)\) along each applicable row. Its left convolution acts by \(a\mapsto f(h)a(\tau(h)^{-1}\sigma)\), with \(rh=r\sigma\). Its right convolution has density \(f(h)J(\tau(h))a(\sigma\tau(h)^{-1})\), with \(sh=s\sigma\). The expressions are zero where no such arrow exists. Both are continuous and compactly supported on compactly supported input. The norm on each side is at most \(\|f\|_\infty\): on the right this is pushforward of the complex row measures, with no duplicate target torsors by the bisection property. Associativity of these point-mass and density products follows by integrating the row products, using Fubini, and proves the two-sided multiplier identities. In particular the inverse lift with conjugate coefficient gives the inverse point-mass product on the corresponding scalar cutoff, with no unaccounted Haar factor.
+
+## Forward implication
+
+The clopen kernel algebra \(B=C_0(X,L^1(K))\) is ordinarily amenable by the group-algebra theorem, [Ghamarshoushtari–Zhang (2015), Theorem 2.1](https://doi.org/10.1016/j.jmaa.2014.09.042), and [Runde (2020), Proposition 2.3.3](https://doi.org/10.1007/978-1-0716-0351-2_2) for the ideal vanishing at infinity. Products of continuous compact unit cutoffs and normalized positive \(K\)-densities supported near \(1\) give a two-sided contractive approximate identity \((c_i)\) common to \(B\) and \(A\). On compactly supported tests both kernel translations converge uniformly on a common compact support; on the right also \(J(k)\to1\). The supports have uniformly bounded row mass, by a finite bisection chart cover. Density gives convergence on \(A\).
+
+Kill \(D|_B\) in the original dual by subtracting one inner derivation, leaving \(\delta\); let \(\delta_V\) denote its restriction to the dual of the essential core \(V\). The multiplier extension characterized by \(\bar\delta(m)a=\delta_V(ma)-m\delta_V(a)\) is bounded by \(\|\delta_V\|\) and vanishes on scalar diagonal multipliers and compactly cut off kernel-section point masses, since their products with \(c_i\) lie in \(B\).
+
+For \(u\in C_c(U,[0,1])\) equal to one near \(\operatorname{supp}f\), put \(T_U(f)=\bar\delta(m_f)m_u^*\), with star here denoting the inverse lift and conjugate cutoff. Common source cutoffs give cutoff independence. Changing a lift inserts a right kernel-section multiplier \(t\) in both local multipliers; \(\bar\delta(t)=0\) and \(tt^*\) is one on the relevant source support. For \(\beta\) a kernel density, transport it by \((\operatorname{Ad}_{\tau(h)^{-1}})_*\) and cut off to obtain a kernel density \(\beta'\) at source. Its density contains \(J(\tau(h))\). The equalities \(\beta m_f=m_f\beta'\), \(\beta'm_u^*=m_u^*\beta\) give \(B\)-centrality of \(T_U(f)\). This also gives commutation with diagonal multipliers by the common approximate identity.
+
+A finite nonnegative bisection partition gives \(T:C_c(H)\to V^*\), with \(\|T(p)\|\le\|\delta_V\|\|p\|_{r,H}\) by dual type (M). With \(R\) the counting range sum on \(H\), the Leibniz rule on product lifts gives
+\[
+ T\big(f*p-((Rf)\circ r)p\big)m_u
+   =m_fT(p)-T(p)m_f+\bar\delta(m_f)d_{Rp}.
+\]
+As in the compact-kernel proof, base Reiter densities make the left side tend to zero, and their row masses tend to one on the compact source support of \(f\). One weak-star cluster point of \(-T(p)\) implements \(\bar\delta\) on the local multipliers and commutes with \(B\). The passage to actual densities now uses
+\[
+ a=bm_u,\qquad b(rh,k)=J(\tau(h))^{-1}a(k\tau(h)),
+ \qquad a\in C_c(\pi^{-1}(U)).
+\]
+Choose \(u=1\) near the projected support; \(b\) is continuous and compactly supported in the chart and extends by zero. The inverse Haar factor here cancels the right multiplier factor. Partitions then give implementation on \(A\). A same-norm Hahn–Banach extension \(z\) of this implementer can be compressed by \(c_i\) on both sides. Since \(\delta(c_i)=0\) there are no off-core terms in the expansion of \(\delta(c_iac_i)\), and the difference from \(\operatorname{ad}_{c_i z c_i}(a)\) is at most \(2\|z\|\|c_i a-a c_i\|\). A weak-star limit implements \(\delta\) in \(E^*\) with norm at most \(\|\delta\|\); then add back the kernel implementer.
+
+## Amenability transfer and reverse implication without properness
+
+For a compact test \(C\subset\Sigma\), choose a compactly supported base Reiter density \(p\) with small defect on \(\pi C\), row masses at most one and equal to one on the tested endpoint units. Split \(p\) into a finite nonnegative partition on lift charts. Add the same compactly supported probability density on \(K\) to each chart term, in its right coordinate. A translated chart term and a target chart term compare by a **left** kernel translation
+\(\tau_l(\alpha\gamma)^{-1}\eta\tau_j(\gamma)\), where \(\eta\in C\), \(\alpha=\pi\eta\), and the two base arrows run over their indicated compact chart supports. The composability and support conditions define compact sets; the finitely many comparison elements therefore range in one compact subset of \(K\). Choose the kernel density to be Reiter on that set. On the common mass of two chart mixtures, use their product mixing weights. The summed row defect is at most the base defect plus the kernel error times \(\sum_\gamma\min(p(\gamma),p(\alpha\gamma))\le1\). If probability rows are desired globally, fill missing mass on the kernel at each unit, which does not change the tested rows. This does not require a kernel density invariant under automorphisms.
+
+In the reverse direction push probability rows down and test a compact subset of \(H\) on finitely many compact partial lifts, not its entire preimage. Pushforward contracts variation and commutes with the translations. To check continuity of the images, on any compact set of units choose a single compactly supported cutoff capturing all but a prescribed uniformly small mass of the fixed probability-row field. Such a cutoff follows from Radon tightness at each unit, continuity, and a finite cover. Multiplying the pulled-back test by it proves continuity without properness. In the second-countable setting the comparison also follows from [Anantharaman–Delaroche–Renault (2000), Proposition 5.1.2](https://www.unige.ch/math/EnsMath/en/monographies/monographie-no-36).
+
+Torsor integration \(Qa(h)=\int a\,d\omega_h\) is a contractive algebra map by Fubini and left transport. It is **onto** the base range completion, even though the pullback of a nonzero density is generally not integrable. In fact each \(f\in C_c(H)\) has an equal-norm lift: use its finite chart partition and multiply each term by the same compactly supported \(K\)-probability density in its right coordinate. The terms at one \(h\) all have the phase of \(f(h)\), so \(Q|a|=|f|\) for the lift \(a\). Decomposing any completed element as a summable series of core terms gives surjectivity and the quotient norm. The [étale witness](06-etale-essential-core.md) pulls back via \(Q\), which preserves the diagonal condition and the essential core. Since \(Q\) is onto, an implementer for the pullback implements the base witness. No multiplicative splitting is needed.
+
+## A nonsplit example with a genuine right Haar factor
+
+Over \(H=\mathbb R\times\mathbb Z^2\), use the fiberwise group law at \(x\)
+\[
+ (a,b,m)(c,d,n)=(a+c+x m_1n_2,\ b+2^{m_1}d,\ m+n).
+\]
+The kernel is \(\mathbb R^2\); \(\tau_m=(0,0,m)\) conjugates the second coordinate by \(2^{m_1}\), so \(J(\tau_m)=2^{m_1}\). The first-coordinate commutator of lifts of the two standard basis vectors is nonzero for \(x\ne0\), regardless of the chosen lifts. There are continuous topological lifts but no homomorphic splitting at those units. Taking a further direct product with an amenable \(ax+b\) group also gives a nonunimodular kernel. This note does not establish the criterion without local lifts or for arbitrary Haar groupoids.
