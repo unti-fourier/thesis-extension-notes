@@ -17,6 +17,7 @@
 | 6 | [A Johnson-type criterion for Hausdorff étale groupoids](06-etale-essential-core.md) | All derivations with right type (M) on the essential core, for any full continuous left Haar system; written proof, not formalized. |
 | 6 | [Uniform innerness for profinite central extensions](06-profinite-central-extensions.md) | Written-checked equivalence in a non-étale class, including noncompact unit spaces, via finite corners and the quotient witness; not formalized. |
 | 6 | [A derivation criterion for étale quotients with compact kernel](06-compact-kernel-local-lifts.md) | Written-checked equivalence with local bisection lifts and normalized torsor Haar; connected and noncentral kernels allowed; not formalized. |
+| 6 | [Removing local lifts by compact Lie quotients](06-compact-lie-quotients-without-local-lifts.md) | Written-checked equivalence for product kernels with separating invariant Lie quotients, including central compact kernels; not formalized. |
 | 7 | [Uniformly bounded stabilizers and matrix reconstruction](07-uniformly-bounded-stabilizers.md) | Written proof independently checked; no Lean verification or priority claim. |
 | 7 | [Right-ℓ¹ coefficients and the fixed-set quotient](07-fixed-set-quotient.md) | Written-checked annihilator formula for full and reduced crossed products; contrasts with the row-norm algebra. |
 
