@@ -88,3 +88,30 @@ In the common support, bound the parent's coordinate from the original row and t
 Its common support is the radius-one ball about the intermediate child. At the original vertex use the mean of the two masses to bound their minimum; at the intermediate child and its children use the original row. Adding the second inequality four times to the first gives \(5t\le 2-J-(D_1+D_2)/3\). This proves the lower bound \(2(1-t)\ge6/5\).
 
 At equality the three off-ray expected masses vanish, hence by continuity and full support they vanish at every end. The grandchild comparison now shares only the original vertex, forcing both the center and grandparent masses to be at least \(2/5\) at every end. The parent mass is therefore at most \(1/5\); the child comparison then forces both parent masses involved to be \(1/5\). Normalization forces the other two masses to be \(2/5\). The certificate is a written calculation, not a Lean verification or a claim of priority.
+
+## Radius three for the two-letter test on \(F_2\)
+
+At \((R,L)=(3,2)\) the exact boundary defect is \(12/13\); if the probabilities are restricted to the first four ray vertices, the best value is \(1\). For the unrestricted upper bound, orient the tree toward the boundary point, and put mass \(2/13\) at each of the first four ray vertices \(g_0,g_1,g_2,g_3\). Put mass \(1/13\) at each of the three children of \(g_0\) and at the two children of \(g_2\) other than \(g_1\). Two starts at distance at most two are a parent and child, grandparent and grandchild, or siblings. The respective overlaps are \(7/13,7/13,8/13\): the minima on the common ray account for \(6,4,6\) units, and the listed branch vertices account for \(1,3,2\) units.
+
+For the lower bound, the type \((i,j)\) records \(i\) parent steps and then \(j\) child steps from the row's center. Write \(A_i,D_j,J_{ij}\) for types \((i,0),(0,j),(i,j)\), with \(i,j>0\) where appropriate. Also use these symbols for their expected mass **per vertex** under the uniform nonbacktracking law on ends. Write \(x_\beta\) for the mass for a generic type, and \(n_\beta\) for its multiplicity. Then \(\sum_\beta n_\beta x_\beta=1\). Recentring at a uniformly chosen child or grandchild preserves the end's distribution, as in radius two.
+
+For a descendant \(w\) at depth \(\ell=1,2\), a point of type \(\beta=(i,j)\) relative to \(w\) has type \(\alpha_\ell=((i-\ell)_+,j+(\ell-i)_+)\) relative to the original center. Fix the end and average over the choice of \(w\). Every vertex of type \(\alpha_\ell\) is selected with probability \(n_\beta/n_{\alpha_\ell}\), since the rooted tree automorphisms fixing the parent ray act transitively on the vertices of that type. This is a counting argument on locations, not a symmetry assumption on the rows. Thus if every overlap is at least \(t\), comparison along a depth-\(\ell\) path gives
+\[
+ t\le Q_\ell=\sum_\beta n_\beta \min(x_\beta,x_{\alpha_\ell(\beta)}),
+\]
+with masses outside the ball zero. The following table bounds the contributions to the two weighted sums, using \((b+c)\min(x,y)\le bx+cy\).
+
+| Type | Multiplicity | Parent-step contribution to \(2Q_1\) | Two-step contribution to \(11Q_2\) |
+| --- | ---: | --- | --- |
+| \(A_0\) | 1 | \(2D_1\) | \(11D_2\) |
+| \(A_1\) | 1 | \(2A_1\) | \(11D_1\) |
+| \(A_2\) | 1 | \(A_1+A_2\) | \(7A_0+4A_2\) |
+| \(A_3\) | 1 | \(2A_2\) | \(4A_1+7A_3\) |
+| \(D_1\) | 3 | \(6D_2\) | \(33D_3\) |
+| \(D_2\) | 9 | \(18D_3\) | 0 |
+| \(D_3\) | 27 | 0 | 0 |
+| \(J_{11}\) | 2 | \(4J_{11}\) | \(22D_2\) |
+| \(J_{12}\) | 6 | \(12D_2\) | \(66D_3\) |
+| \(J_{21}\) | 2 | \(4J_{11}\) | \(8D_1+14J_{21}\) |
+
+Summing gives \(13t\le 2Q_1+11Q_2\le7-12D_2-72D_3-6J_{11}-42J_{12}\le7\). If all mass is on the ray, \(Q_2\le(A_0+A_1+A_2+A_3)/2=1/2\), and the uniform ray field attains this overlap at the worst distance-two test. These are finite written certificates, independently checked; no Lean verification or priority claim is made.
