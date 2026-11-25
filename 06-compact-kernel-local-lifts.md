@@ -12,7 +12,7 @@ Let \(A\) be the untwisted one-sided range-norm convolution completion for this 
 2. \(H\) is topologically amenable.
 3. For every contractive Banach \(A\)-bimodule \(E\) whose essential core \(V=\overline{\operatorname{span}}AEA\) satisfies right diagonal type (M), all bounded derivations \(A\to E^*\) are inner.
 
-Here the diagonal \(d_z\) for \(z\in C_0(X)\) acts on densities by multiplication by \(z\circ r\) on the left and by \(z\circ s\) on the right. Type (M) is \(\sum_j\|v d_{z_j}\|\le\|\sum_j z_j\|_\infty\|v\|\) for finite positive families, \(v\in V\). Neither compact units nor centrality, commutativity or total disconnectedness of the kernel is required.
+Here the diagonal \(d_z\) for \(z\in C_0(X)\) acts on densities by multiplication by \(z\circ r\) on the left and by \(z\circ s\) on the right. Type (M) is \(\sum_j\|v d_{z_j}\|\le\|\sum_j z_j\|_\infty\|v\|\) for finite positive families, \(v\in V\). Neither compact units nor centrality, commutativity or total disconnectedness of the kernel is required. The final section removes global triviality of the kernel bundle.
 
 ## Forward implication
 
@@ -44,3 +44,26 @@ Torsor averaging \(Qa(h)=\int a\,d\omega_h\) gives a contractive quotient algebr
 A noncentral example is the action groupoid of an irrational circle rotation by \(\mathbb Z\), extended by a second circle on which a degree-\(n\) arrow acts by \(z\mapsto z^{(-1)^n}\). A nonsplit example over the bundle \(\mathbb R\times\mathbb Z^2\) uses the circle-valued cocycle \(\exp(2\pi i x m_1n_2)\) in the fiber over \(x\). For \(x\notin\mathbb Z\) any lifts of the two standard generators have nontrivial commutator. Both bases are amenable.
 
 This extends the [profinite central case](06-profinite-central-extensions.md) by a different argument. It does not settle arbitrary Haar groupoids, the two-sided \(I\)-norm completion, or ordinary Banach amenability of the range-norm algebra.
+
+## Removing global triviality of the kernel bundle
+
+The same theorem holds for a **locally trivial bundle of compact groups with fixed model fiber \(K\)**, rather than a global product \(X\times K\). Keep the local bisection lifts and normalized torsor Haar. No paracompactness of \(X\) is needed. Here is the additional written argument. Let \(B\) now denote the closure of the kernel densities, with the sup of the fiber \(L^1\) norms.
+
+**A common approximate identity.** For a finite family of compactly supported test densities, cover their compact range and source projections by finitely many kernel charts. Choose positive cutoffs \(\phi_i\) supported inside those charts, of sum at most one and equal to one in sum near the projections. In each chart choose a positive continuous probability density on \(K\) supported sufficiently near the identity. Multiply by \(\phi_i\) and sum the resulting sections, extending by zero, to get a contractive \(e\in B\). In each chart, both kernel translations approach the identity uniformly on the compact saturated support of the tests. A finite bisection cover bounds the row mass of the support independently of the test point. Thus these \(e\), directed by finite tests and accuracy, form a two-sided approximate identity for \(A\) and \(B\).
+
+**Delete the kernel restriction of the derivation.** The common approximate identity makes \(V=\overline{\operatorname{span}}BEB\). Restrict \(D|_B\) to \(V^*\), denoting the result by \(d\). Extend \(d\) contractively to the multipliers of \(B\) by the same weak-star argument used above. In particular \(d\) restricts there to a derivation on the scalar diagonal's sup-norm unitization. Averaging the bounded affine action of its abelian unitary group gives a diagonal implementer of norm at most \(\|d\|\). Subtract its inner derivation from \(d\), leaving \(\delta\), with \(\|\delta\|\le 3\|d\|\) and \(d_p\delta(b)=\delta(pb)=\delta(b)d_p\) for scalar \(p\in C_0(X)\) and \(b\in B\).
+
+In a kernel chart \(U\), the ideal \(B(U)\) of sections vanishing outside \(U\) is \(C_0(U,L^1(K))\). These algebras admit ordinary approximate diagonals of norm at most one uniformly in \(U\). For \(C_0(U)\), average \(v\otimes v^{-1}\) over finite exponent boxes of the finitely many unitary generators needed to approximate a given test; use the sup-norm unitization, then diagonally cut off both factors to get tensors in \(C_0(U)\widehat\otimes_\pi C_0(U)\). For the group algebra use [Stokke (2004), Corollary 1.10](https://doi.org/10.4064/sm164-2-3). Interleave the two approximate diagonals by the contractive projective tensor map
+\((f\otimes g,a\otimes b)\mapsto (fa)\otimes(gb)\).
+For elementary tests the two commutator errors are exactly those of the two input diagonals, and the product is the pointwise product of their respective approximate identities. Density extends the conclusion without identifying the section norm with a projective norm.
+
+The restriction of \(\delta|_{B(U)}\) to \(F_U^*\), where \(F_U=\overline{\operatorname{span}} B(U) V B(U)\), therefore has an implementer of norm at most \(\|\delta\|\), by taking a weak-star limit of the approximate diagonals mapped by \(a\otimes b\mapsto a\,\delta(b)|_{F_U}\). Choose a same-norm Hahn–Banach extension \(z_i\in V^*\) of this implementer for each of finitely many charts over a compact \(L\subset X\). Use nonnegative \(\phi_i\) as above, and choose \(0\le\psi_i\le1\) supported in the same chart with \(\psi_i=1\) near \(\operatorname{supp}\phi_i\). Set
+\[
+ \chi_L=\sum_i\phi_i,\qquad
+ \eta_L=\sum_i d_{\phi_i} z_i d_{\psi_i}.
+\]
+A further cutoff supported in \(U_i\) and equal to one near both supports lets us test the local implementation only on \(B(U_i)\). The discrepancy annihilates \(F_{U_i}\) and disappears after the two cutoffs, since \(d_{\psi_i}v d_{\phi_i}\in F_{U_i}\) for \(v\in V\), by the common approximate identity. The scalar commutation of \(\delta(b)\) then gives the exact identity \(\operatorname{ad}_{\eta_L}(b)=\delta(\chi_L b)\). This does not presume the Hahn–Banach extensions \(z_i\) commute with the diagonal.
+
+Dual type (M) gives \(\|\eta_L\|\le\|\delta\|\) with no dependence on the size or multiplicity of the cover. Since \(\chi_L b\to b\) in norm as \(L\) increases, a weak-star limit implements \(\delta\) on \(B\). Together with the diagonal implementer this gives a bound \(4\|D|_B\|\) for the implementation on \(V^*\) of the original kernel restriction. This bound concerns the restriction, not the derivation on \(A\).
+
+After subtracting that kernel implementer on \(V^*\), the proof above applies unchanged: conjugation along an arrow is now a Haar-preserving isomorphism \(K_{sh}\to K_{rh}\); the difference of two lifts is a local kernel section; and the factorization \(a=\beta m_u\) defines \(\beta\) as a section on the kernel bundle. The split averaging quotient and the reverse witness are also unchanged. This still does not address non-locally-trivial kernel bundles or bases without bisection lifts.
