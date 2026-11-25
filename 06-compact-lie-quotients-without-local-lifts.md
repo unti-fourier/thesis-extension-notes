@@ -1,0 +1,38 @@
+# Removing local lifts by compact Lie quotients
+
+**Work in progress.** Written-checked research note for a possible future paper, not a preprint, submission, peer-reviewed result, or profile entry. No priority or Lean verification claim.
+
+Let \(H\rightrightarrows X\) be locally compact Hausdorff and étale, and let \(\pi:\Sigma\to H\) be a locally compact Hausdorff extension, identical on units, with product kernel \(X\times K\) for a compact Hausdorff group \(K\). Assume \(H\) has the orbit quotient topology for the right \(K\)-action. Suppose there is a downward-directed family of closed normal subgroups \(N\) of \(K\), carried to themselves by conjugation along every arrow of \(\Sigma\), such that \(\bigcap N=\{1\}\) and each \(K/N\) is compact Lie. For a central extension such a family is supplied by Peter–Weyl: take kernels of finite direct sums of finite-dimensional unitary representations.
+
+Equip \(\Sigma\) with normalized Haar probability on each torsor over a base arrow, summed over each range row of \(H\), and let \(A\) be its untwisted one-sided range completion. Then topological amenability of \(H\), topological amenability of \(\Sigma\), and the universal derivation criterion of the [local-lift note](06-compact-kernel-local-lifts.md) are equivalent. Specifically, the latter tests all bounded derivations \(A\to E^*\) into the dual of a contractive bimodule with right diagonal type (M) on \(\overline{\operatorname{span}}AEA\). No local lift is required on the original extension.
+
+## Quotient topology and Haar systems
+
+For the compact group actions, the orbit maps are open, closed and proper, and the quotients are locally compact Hausdorff. Properness follows by covering a compact subset of the quotient by finitely many images of relatively compact neighborhoods and taking the compact saturations of their closures. Conjugation invariance of \(N\) makes \(\Sigma/N\) a groupoid: for composable \(\sigma,\tau\), \((\sigma n)(\tau m)=\sigma\tau((\tau^{-1}n\tau)m)\). Endpoints do not change in passing to the quotient, so the image of each relative open rectangle in the composable pairs is the corresponding relative open rectangle in the quotient. This proves the quotient multiplication is continuous. The free action of \(K/N\) on \(\Sigma/N\) has quotient \(H\). By [Gleason (1950), Theorem 3.3](https://doi.org/10.1090/S0002-9939-1950-0033830-7), its orbit map has local sections; shrink them to open bisections of \(H\).
+
+On the original \(\Sigma\), torsor averaging of \(a\in C_c(\Sigma)\) is continuous because \(\sigma\mapsto\int_K a(\sigma k)\,dk\) descends through the quotient map. The average \(Qa\) is supported in \(\pi(\operatorname{supp}a)\). Counting range sums of \(Qa\) are continuous by bisection partitions. Left translation preserves torsor probabilities, as does right translation by Haar invariance under the transported kernel isomorphisms. These observations give a full continuous left Haar system without sections. For \(a,b\in C_c(\Sigma)\), integrating the output over the torsor of \(h\) in the convolution and fixing the input arrow \(\alpha\) above \(l\) transports its probability to the torsor of \(l^{-1}h\), giving \(Q(a*b)=Qa*Qb\). Thus \(Q\) is a contractive map onto the counting range algebra of \(H\), split by the isometric algebra homomorphism \(b\mapsto b\circ\pi\); properness preserves compact support. The same normalized transport preserves the variation defect when lifting Reiter probability rows and contracts it when pushing them down. Properness transfers all compact tests, proving the two topological amenability conditions equivalent.
+
+Each \(A_N=A_r(\Sigma/N)\) embeds isometrically as a subalgebra of \(A\) by pullback since the torsor probabilities push forward to normalized probabilities on the quotient. Its image is the range of \(P_Na(\sigma)=\int_N a(\sigma n)\,dn\). The union of the images is directed and dense: compactness and \(\bigcap N=\{1\}\) force \(N\) eventually into any identity neighborhood. Thus \(P_Na\to a\) uniformly on the compact saturation of the support for \(a\in C_c(\Sigma)\). The saturation meets each range row in uniformly bounded mass, by a finite bisection cover of the base support, so convergence also holds in range norm. In particular, convolution on the original \(C_c(\Sigma)\) is continuous: the convolution of the two averaged functions is continuous on the quotient by the local-lift computation, and converges uniformly using the same row-mass bound.
+
+## A uniform implementer on the original dual
+
+The clopen kernel algebra \(B=C_0(X,L^1(K))\) is ordinarily amenable by the function-algebra and ideal results cited in the local-lift note. Subtract an implementer of \(D|_B\) in the original \(E^*\) to obtain \(\delta\) zero on \(B\). For each \(N\), the subalgebra \(A_N\) has a two-sided contractive approximate identity \((c_i)\) inside \(B\cap A_N\): pull back the product of unit cutoffs and normalized approximate-identity densities of \(K/N\). This converges on compactly supported tests by uniform control of both kernel translations. The right diagonal action on \(F_N=\overline{\operatorname{span}}A_N E A_N\) is the original source action, so right type (M) is inherited.
+
+If \(H\) is amenable, the local-lift Reiter argument on \(\Sigma/N\) implements \(\delta|_{A_N,F_N^*}\) by \(\zeta_N\) of norm at most \(\|\delta\|\), since the kernel restriction is already zero and the averaging operator in that argument has norm at most \(\|\delta\|\). Extend \(\zeta_N\) by Hahn–Banach to \(z\in E^*\) with the same bound. As \(c_iEc_i\subset F_N\), compression gives
+\[
+ c_i\delta(a)c_i=c_i(az-za)c_i\qquad(a\in A_N).
+\]
+Moreover \(\delta(c_i)=0\), so the Leibniz expansion of \(\delta(c_i a c_i)\) has only its middle term. Its difference from \(\operatorname{ad}_{c_i z c_i}(a)\) is bounded by \(2\|z\|\|c_i a-a c_i\|\), which tends to zero. A weak-star limit therefore implements \(\delta\) on \(A_N\) in the original dual \(E^*\), with norm at most \(\|\delta\|\). A further weak-star limit along the directed quotients gives the same bound on \(A\), by the dense union. Adding back the kernel implementer yields an implementer of \(D\).
+
+Conversely the specified witness from the [étale criterion](06-etale-essential-core.md) pulls back along \(Q\): surjectivity preserves the essential core and \(Q(a d_p)=(Qa)J_Hp\) preserves the right diagonal condition. Restriction along the splitting implements the base witness, hence \(H\) is amenable.
+
+## Example with no local lifts
+
+Let \(X=\mathbb T^{\mathbb N}\), \(H=X\times\mathbb Z\), and
+\[
+ \Sigma=\{(x,z,n): z_j^2=x_j^n\text{ for all }j\},\qquad
+ (x,z,n)(x,w,m)=(x,zw,n+m).
+\]
+The kernel \(\{\pm1\}^{\mathbb N}\) is central. Each degree is compact and the orbit quotient is precisely \(X\) in that degree. Finite-coordinate quotients admit local lifts. The original map in degree \(1\) admits none on a nonempty open set: a basic product neighborhood leaves some coordinate free over the whole circle, and a continuous square root of that coordinate would have degree \(1/2\). Its isotropy has an infinite discrete quotient \(\mathbb Z\), so this is a nonproper, non-étale example.
+
+For noncentral kernels a separating family is a real extra hypothesis. In the semidirect product of \(K=(\mathbb Z/2)^{\mathbb Z}\) with the bilateral shift, Lie quotients of \(K\) are finite. A shift-invariant open subgroup contains all single-coordinate generators, hence equals \(K\); the finite invariant quotients do not separate points. This example does not refute the criterion without that hypothesis.
