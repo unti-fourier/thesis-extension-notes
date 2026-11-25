@@ -66,3 +66,25 @@ In fact this holds for any nonempty action space. Write \(d=2r\) and let \(t=1-\
 The constant field giving the center mass \(1/(2d+1)\) and each neighbor \(2/(2d+1)\) attains the bound: one-letter overlap consists of two contributions \(1/(2d+1)\), and two-letter overlap is a single midpoint of mass \(2/(2d+1)\). Equality in the one-letter bound forces both center masses to be \(1/(2d+1)\) at every test, so the neighbor masses must all equal their lower bound too. This gives uniqueness. The value is \(14/9\) for \(F_2\). In contrast, the ray field at \(\xi=s^\infty\), tested against \(s^2\), has disjoint supports and defect \(2\). Radius zero leaves only one possible field, so radius one is the first failure of optimality of the ray field for this test set.
 
 This extension of the calculation was independently checked in writing; no Lean, full \(I\)-defect or priority claim is made.
+
+## Radius two for the two-letter test on \(F_2\)
+
+With \((R,L)=(2,2)\) the exact boundary value is \(6/5\). The unique optimal field is
+\[
+ p_\xi=\tfrac25\delta_e+\tfrac15\delta_{\xi_1}+\tfrac25\delta_{\xi_1\xi_2}.
+\]
+For this field, two adjacent starts toward the same end give overlap \(2/5\). At distance two, the overlap is \(2/5\) when one start lies on the other's ray, and \(3/5\) when the two rays meet at the midpoint. This improves the uniform ray average's defect \(4/3\).
+
+Here is a lower bound for arbitrary continuous fields. Choose the end by the uniform nonbacktracking distribution. Orient the tree with each parent toward that end. At a vertex write \(a,b,c\) for the *expected* masses at the vertex, parent and grandparent, and \(J,D_1,D_2\) for expected total masses at the siblings, children and grandchildren. To evaluate an overlap, choose a child uniformly (one of three), then a grandchild by a second uniform child choice if needed. Recentring the end at the chosen child leaves its marginal distribution unchanged: the inserted first letter is uniform among the four, the conditional second letter is uniform among the three allowed letters, and the later transition probabilities are unchanged. Thus the expected masses at the child or grandchild have the same marginals.
+
+If all tests have overlap at least \(t\), the child comparison gives
+\[
+ t\le 2b+J+(D_1+D_2)/3 .
+\]
+In the common support, bound the parent's coordinate from the original row and the original vertex from the child's row, giving the two terms \(b\). Bound the chosen child from the original row, the child's siblings from the child's row, and the children of the chosen child from the original row. The grandchild comparison gives
+\[
+ t\le (a+c)/2+(D_1+D_2)/3 .
+\]
+Its common support is the radius-one ball about the intermediate child. At the original vertex use the mean of the two masses to bound their minimum; at the intermediate child and its children use the original row. Adding the second inequality four times to the first gives \(5t\le 2-J-(D_1+D_2)/3\). This proves the lower bound \(2(1-t)\ge6/5\).
+
+At equality the three off-ray expected masses vanish, hence by continuity and full support they vanish at every end. The grandchild comparison now shares only the original vertex, forcing both the center and grandparent masses to be at least \(2/5\) at every end. The parent mass is therefore at most \(1/5\); the child comparison then forces both parent masses involved to be \(1/5\). Normalization forces the other two masses to be \(2/5\). The certificate is a written calculation, not a Lean verification or a claim of priority.
