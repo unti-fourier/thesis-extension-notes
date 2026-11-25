@@ -19,6 +19,7 @@
 | 6 | [A derivation criterion for étale quotients with compact kernel](06-compact-kernel-local-lifts.md) | Written-checked equivalence with local bisection lifts and normalized torsor Haar; connected and noncentral kernels allowed; not formalized. |
 | 6 | [Removing local lifts by compact Lie quotients](06-compact-lie-quotients-without-local-lifts.md) | Written-checked equivalence for product kernels with separating invariant Lie quotients, including central compact kernels; not formalized. |
 | 6 | [Locally lifted extensions by amenable locally compact kernels](06-locally-lifted-amenable-kernel.md) | Written-checked equivalence with fixed amenable kernel, including noncompact and nonunimodular groups, and local bisection lifts; not formalized. |
+| 6 | [Norm-one Banach amenability for L¹ group bundles](06-amenable-group-bundle-diagonals.md) | Written-checked diagonal in the ordinary projective norm for amenable fibers, without local triviality or compactness; not formalized. |
 | 7 | [Uniformly bounded stabilizers and matrix reconstruction](07-uniformly-bounded-stabilizers.md) | Written proof independently checked; no Lean verification or priority claim. |
 | 7 | [Right-ℓ¹ coefficients and the fixed-set quotient](07-fixed-set-quotient.md) | Written-checked annihilator formula for full and reduced crossed products; contrasts with the row-norm algebra. |
 
