@@ -53,6 +53,7 @@
 | 6 | [The raw I-amenability constant with one isolated atom](06-pair-groupoid-one-isolated-atom.md) | Exact constant 1/(1−p) for one isolated atom and a nonatomic summand. Written verification only. |
 | 6 | [Compact pair groupoids with finitely many point atoms](06-pair-groupoid-finite-point-atoms.md) | Exact constant 1/d for nonatomic mass d>0 and finitely many, possibly nonisolated, atoms. Written verification only. |
 | 6 | [Compact pair groupoids with countably many point atoms](06-pair-groupoid-countable-atoms.md) | Exact constant 1/d for positive nonatomic mass d; nonamenability for infinitely many atoms and no diffuse part. Written verification only. |
+| 6 | [Raw I-amenability for the product of a compact pair groupoid and a unimodular group](06-product-pair-unimodular-group.md) | Detects isotropy amenability and preserves the pair-groupoid constant if the group is amenable. Written verification only. |
 | 7 | [Uniformly bounded stabilizers and matrix reconstruction](07-uniformly-bounded-stabilizers.md) | Written proof independently checked; no Lean verification or priority claim. |
 | 7 | [Right-ℓ¹ coefficients and the fixed-set quotient](07-fixed-set-quotient.md) | Written-checked annihilator formula for full and reduced crossed products; contrasts with the row-norm algebra. |
 | 7 | [A right G₂ coefficient that detects nuclearity](07-right-g2-nuclearity.md) | Written-checked single-derivation test, also for the coefficient and central multiplier restrictions on a C*-crossed product; not Lean-formalized. |
