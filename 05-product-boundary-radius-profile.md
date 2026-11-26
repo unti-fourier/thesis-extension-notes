@@ -68,4 +68,29 @@ For the lower bound put a unit cube at each vertex of a set in \(T_{d,R}\), exte
 
 In \(\Sigma_3\), intersect \([0,1/2]^3\) with the additional inequalities \(x_i+x_j\le5/6\) for every pair. The resulting \(E\) has \(P_1(E)/|E|=612/43\), strictly better than every \(C_t=[0,t]^3\cap\Sigma_3\). Indeed, all coordinate fibers of these downward closed symmetric polytopes are intervals; therefore \(P_1\) is six times the area of a single coordinate projection. The projection of \(E\) removes a right triangle of leg \(1/6\) from the half-unit square and has area \(17/72\). Each removed volume is \(\int_0^{1/6}s^2\,ds=1/648\) (set \(s=1-x_i-x_j\)). The three cuts are disjoint under the half-unit caps and the simplex inequality. Hence \(|E|=5/48-3/648=43/432\).
 
-For the clipped cube, maximize the volume-to-projection ratio \(V/A\). It is \(t\) for \(0<t\le1/3\); for \(1/3\le t\le1/2\) it is \((1-u^3/6)/(3-u)\), \(u=3-1/t\). Its derivative has the sign of \(g(u)=2u^3-9u^2+6\), strictly decreasing on \((0,1)\), and its maximum at the unique zero \(u_*\) equals \(u_*^2/2\). For \(1/2\le t\le1\), writing \(v=1-t\), the ratio is \((1-3v^3)/(3(1-2v^2))\le5/12\), since \((1-2v)(1+2v-6v^2)\ge0\); above \(t=1\) it is unchanged. Thus the best clipped-cube perimeter ratio is \(12/u_*^2\). Since \(g(11/12)=-19/864<0\), it exceeds \(1728/121>612/43\). In particular the three-factor limiting constant \(h_3/3\) is at most \(204/43\); its exact value is not established here. This comparison is checked in writing, not in Lean.
+For the clipped cube, maximize the volume-to-projection ratio \(V/A\). It is \(t\) for \(0<t\le1/3\); for \(1/3\le t\le1/2\) it is \((1-u^3/6)/(3-u)\), \(u=3-1/t\). Its derivative has the sign of \(g(u)=2u^3-9u^2+6\), strictly decreasing on \((0,1)\), and its maximum at the unique zero \(u_*\) equals \(u_*^2/2\). For \(1/2\le t\le1\), writing \(v=1-t\), the ratio is \((1-3v^3)/(3(1-2v^2))\le5/12\), since \((1-2v)(1+2v-6v^2)\ge0\); above \(t=1\) it is unchanged. Thus the best clipped-cube perimeter ratio is \(12/u_*^2\). Since \(g(11/12)=-19/864<0\), it exceeds \(1728/121>612/43\). In particular the three-factor limiting constant \(h_3/3\) is at most \(204/43\); the next section computes its exact value. This comparison is checked in writing, not in Lean.
+
+## Exact three-factor continuum constant
+
+Let \(c_*\) be the unique root in \((0,1/6)\) of
+\[
+Q(c)=1-9c+9c^2+(15+12\sqrt2)c^3.
+\]
+Then \(h_3=2/c_*\), and the limiting three-factor constant is
+\(\lim_{R\to\infty}R\Delta_3(R)=2/(3c_*)\simeq 4.73144905\).
+A minimizing set is \(\Sigma_3\) cut by \(x_i\le 1-(2+\sqrt2)c_*\) and \(x_i+x_j\le1-c_*\). This is a global bound for finite-perimeter subsets, not just an optimization within this family. It does not classify all minimizing sets.
+
+For a symmetric downward-closed union of grid cubes inside \(\Sigma_3\), write its coordinate projection in the sector \(x\ge y\) as \(0\le y\le t(x)\). Put \(B=\int t(x)\,dx\) and \(I=\int\int_0^{t(x)}\min(y,1-x-y)\,dy\,dx\). Then \(P_1=12B\) by slicing, and \(|E|\le6I\) by restricting to the sector \(x\ge y\ge z\) and multiplying by six.
+
+For \(0<c<1/6\) set \(a=1-(2+\sqrt2)c,\ b=1-c,\ s=b/2\), and let \(t_c=\min(x,b-x)\) up to \(a\) and zero after \(a\). This is the projection of the stated two-cut candidate. To bound \(I-cB\), let \(\eta\) be the supremum of the diagonal coordinates \((y,y)\) in the projection. Downward closure gives \(t(x)\le\eta\) and \(t(x)=x\) for \(x<\eta\). If \(\eta\le2c\), the estimate \(\int_0^t(\min(y,1-x-y)-c)\,dy\le t^2/2-ct\le0\) suffices. Otherwise \(t=t_c\) for \(x<2c\); for each \(x\ge2c\), the integral is maximized at \(t_c(x)\). Indeed, for \(2c\le x\le1/3\), compare the endpoints of the quadratic \(t^2/2-ct\). For \(1/3\le x\le s\), compare \(t=0\) with \(t=x\), since the integrand changes sign at most once from negative to positive on the allowed interval. The value at \(t=x\) is a concave quadratic in \(x\) on this range and positive at both endpoints. For \(x\ge s\), with \(L=1-x\), the integrand is nonpositive when \(L\le2c\); otherwise compare \(t=0\) with \(t=L-c\), whose value is \((L-(2+\sqrt2)c)(L-(2-\sqrt2)c)/4\). For \(L\ge2c\) this is nonnegative exactly up to \(x=a\).
+
+Writing \(\Phi(c)\) for the value of \(I-cB\) at \(t_c\), the bound is thus \(I-cB\le\max(0,\Phi(c))\). The moving boundary at \(x=s\) cancels, the endpoint at \(x=a\) has zero integral, and the moving upper limit for \(s\le x\le a\) has zero integrand. Hence
+\[
+\Phi'(c)=-\int t_c=-\bigl(1/4-c/2-(5/4+\sqrt2)c^2\bigr),\quad
+\Phi(0)=1/36,\quad 36\Phi(c)=Q(c).
+\]
+In particular the root exists and is unique by strict decrease and opposite endpoint signs. At \(c=c_*\) all such cube unions satisfy \(P_1\ge(2/c_*)|E|\). For the candidate, the third coordinate is free to run up to \(\min(y,1-x-y)\) because both extra cuts are tested on the largest coordinates, giving equality.
+
+For the global lower bound, compress a lattice minimizing set along each coordinate to initial intervals. This preserves cardinality, decreases edge boundary, and preserves downward closure in any previously compressed axis. Average the resulting indicator over coordinate permutations and use discrete layer cake; some nonempty level set remains minimizing and is symmetric and downward closed. Scaling its union of unit cubes by \(1/(R+3)\) gives one of the sets considered above. Thus \(3(R+3)\Delta_3(R)\ge 2/c_*\). The continuum comparison already proved above now yields \(h_3\ge2/c_*\). Also \(Q(9/64)>0\) (use \(\sqrt2>7/5\)), so \(2/c_*<128/9<612/43\), strictly improving the earlier rational candidate without numerical rounding.
+
+The calculation and reduction were checked in writing, not in Lean. [Kawohl and Novaga (2008), Theorem 5.1](https://cvgmt.sns.it/document/1248/#page=8) treats bounded planar convex domains, not this three-dimensional case. Priority for this exact simplex value remains unverified.
