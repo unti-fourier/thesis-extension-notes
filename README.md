@@ -61,5 +61,6 @@
 | 7 | [Off-diagonal corners detect nonpositive slices](07-finite-plus-compacts-minimizers.md) | Norm-two minimizers on a finite matrix block plus infinite-dimensional compacts are precisely the pairs of state slices. Written verification only. |
 | 7 | [The complement norm of a commutant retraction for properly infinite M](07-properly-infinite-retraction-norm.md) | Exact complement norm 1 + the norm of Q when the represented unit is properly infinite, including singular retractions. Written verification only. |
 | 7 | [Diffuse commutants and norm-two retractions](07-diffuse-commutant-retraction-norm.md) | Finite-rank annihilation gives exact complement norm, including the hyperfinite II₁ factor in standard form. Written verification only. |
+| 7 | [Norm-two commutant retractions are positive in infinite dimension](07-norm-two-retractions-positive.md) | General positivity iff the complement norm attains two, for infinite-dimensional represented von Neumann algebras. Written verification only. |
 
 The stabilizer note proves a comparison for compact Hausdorff actions with uniformly bounded finite stabilizers, without requiring finitely many stabilizer elements or conjugacy classes. It separates the sharp matrix reconstruction constant from the bound for the inverse cohomological comparison.
