@@ -23,6 +23,7 @@
 | 6 | [Locally lifted extensions by variable amenable groups](06-locally-lifted-variable-amenable-kernels.md) | Written-checked extension to arbitrary amenable Haar fibers, including noncompact ones; ample quotients supply lifts automatically. |
 | 6 | [Topological amenability and approximate continuous primitives](06-continuous-bounded-cocycles.md) | Written-checked approximate criterion in all positive degrees, global-norm properness test, and ample counterexample to exact vanishing; not formalized. |
 | 6 | [Exact bounded cohomology of bidual sections for Haar groupoids](06-etale-bidual-bounded-cohomology.md) | Written-checked in all positive degrees for full continuous Haar systems, with a single first-degree test; not formalized. |
+| 6 | [A norm-one approximate diagonal for a pair groupoid](06-pair-groupoid-schur-amenability.md) | Ordinary Banach amenability of continuous Schur kernels for full-support nonatomic probability; written verification. |
 | 7 | [Uniformly bounded stabilizers and matrix reconstruction](07-uniformly-bounded-stabilizers.md) | Written proof independently checked; no Lean verification or priority claim. |
 | 7 | [Right-ℓ¹ coefficients and the fixed-set quotient](07-fixed-set-quotient.md) | Written-checked annihilator formula for full and reduced crossed products; contrasts with the row-norm algebra. |
 
