@@ -8,6 +8,7 @@
 | 1 | [The minimum norm of a single implementer under stabilization](01-stable-compacts-implementer-norm.md) | Exact norms for the specified test on compact-operator bundles, without invariant corners; written verification. |
 | 1 | [A central mean need not descend to the Glimm space](01-nonhausdorff-glimm-central-mean.md) | Explicit separable CCR example; written verification, no Lean formalization. |
 | 1 | [Amenability descends over finite Glimm fibres](01-finite-glimm-fibre-descent.md) | Separable CCR, compact metrizable Glimm space, no uniform cardinality bound. Written verification only. |
+| 1 | [Amenability descends over countable compact Hausdorff Glimm fibres](01-countable-compact-glimm-fibre-descent.md) | A Borel kernel on the last Cantor–Bendixson derivative gives equivariant descent. Written verification only. |
 | 2 | [A measurable Reiter gap and a compact metrizable factor](02-measurable-reiter-gap.md) | Common measurable lower bound checked in Lean; factor argument checked in writing; Hochschild nonvanishing not covered. |
 | 2 | [An absolute degree-two witness](02-absolute-hochschild-degree-two.md) | Written-checked characterization for countable discrete actions with a norm-one witness; not fully formalized. |
 | 2 | [Locally compact groups and absolute degree-two Hochschild cohomology](02-locally-compact-absolute-hh2-split-injection.md) | Written-checked split injection for specified coefficients and norms; also a strict-extension counterexample. Not Lean-formalized. |
