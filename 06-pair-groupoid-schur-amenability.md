@@ -78,3 +78,34 @@ has norm at most \(8\|D\|\) by type (M). Matrix-unit multiplication and the deri
 The restricted result extends to the product groupoid \(X\times\Gamma\times X\), with the product Haar system from the purely atomic measure on \(X\) and counting measure on a countable discrete amenable group \(\Gamma\). The implementer bound on the essential core is still \(8\|D\|\). Write \(k[h]\) for a pair kernel supported at group coordinate \(h\), and use the preceding \(a_i=p_i\boxtimes v\), \(b_i=u\boxtimes q_i\) in each matrix corner. The bound \(\|b_i[h^{-1}]\|_I\le2\) holds since the group coordinate is a singleton. The left-action bound of \((1\boxtimes v)[h]\) is at most four, by the preceding argument at the identity coordinate and the isometric group-translation multiplier. The pair approximate identity placed at the identity group element is an approximate identity for the entire algebra, first on the compactly supported kernels and then by density.
 
 For a finite left Følner set \(F\), put \(\xi_{P,F}=|F|^{-1}\sum_{h\in F}\sum_i a_i[h]D(b_i[h^{-1}])\). For each \(h\) use the dual type (M) estimate on \(p_i\), then average over \(h\), obtaining \(\|\xi_{P,F}\|\le8\|D\|\). For \(x=e_{kl}[s]\) the difference \(x\xi_{P,F}-\xi_{P,F}x-P[e]D(x)\) is the difference of sums of \(a_k[t]D(b_l[t^{-1}s])\) over \(sF\) and over \(F\), each divided by \(|F|\), by the derivation rule and the change \(t=sh\). Its norm is bounded by \(8\|D\|\,|sF\triangle F|/|F|\). This uses no commutativity of \(\Gamma\). First take a weak-star limit at a fixed corner, then along the corners to get an implementer on the whole algebra as above. For infinite \(X\), summing over \(\Gamma\) is a contractive surjective homomorphism onto the pair algebra, so ordinary amenability still fails in the purely atomic case. This is a written check of this product class only.
+
+## Constant locally compact isotropy and the modular function
+
+For a compact Hausdorff space \(X\) with at least two points and a finite purely atomic full-support Radon measure, the essential-module result extends to \(X\times G\times X\) for every amenable locally compact group \(G\), including non-unimodular ones. The bound is again \(8\|D\|\). This is a written check for the product Haar system, not a Lean verification or a general groupoid theorem.
+
+Write \(\lambda\) for left Haar measure and \(\lambda_R=\mathrm{inv}_*\lambda=q\lambda\). If \(K[f](x,s,y)=K(x,y)f(s)\), then the raw \(I\)-norm is the maximum of \(\|K\|_{\mathrm{row}}\|f\|_L\) and \(\|K\|_{\mathrm{col}}\|f\|_R\), using the \(L^1\) norms for \(\lambda\) and \(\lambda_R\). In formulas involving \(\delta_t\), convolution refers to convolution of measures and we identify the result with its density relative to \(\lambda\). Right translation preserves the left norm and scales the right norm by \(q(t)\); specifically \((f*\delta_t)(s)=q(t)f(st^{-1})\).
+
+The disjoint-support left-action estimate above applies unchanged: a multiplier of the form \((1-t)M_\theta+tk\) contracts the raw \(I\)-norm by testing both Haar fibers, and extends to the essential module using a contractive approximate identity. The latter follows by tensoring the positive contractive endpoint partitions with normalized positive group kernels whose support tends to the identity and whose right norm tends to one, and rescaling if necessary.
+
+In the matrix-corner construction choose \(u,v\) at the small atom as before, now with \(\|v\|_1\le3/2\). Choose \(u',v'\) at a different atom with disjoint supports, \(\int v'u'\,d\mu=1\) and \(\|v'\|_1\le3/2\). For a cutoff \(\chi=1\) near \(\operatorname{supp}u\), with support disjoint from \(\operatorname{supp}u'\), the \(1-\chi\) part of \((1\boxtimes v)[f]\) has disjoint input and output supports. For the other part use
+\[
+(\chi\boxtimes v)[f]=\lim_\beta
+  (\chi\boxtimes v')[f]*(u'\boxtimes v)[r_\beta],
+\]
+where \(r_\beta\) are positive left-normalized group approximate units supported near the identity. Each factor has disjoint endpoint supports. Since \(f*r_\beta\to f\) in both Haar norms, the resulting left-action bound is \(\|v\|_1(1+\|v'\|_1)\|f\|_L\le4\|f\|_L\), with no dependence on \(\|f\|_R\).
+
+Use a nonnegative compactly supported left Reiter density \(\rho\) of left mass one, with support \(K\), for a compact test set \(S\ni e\). The standard Reiter averaging construction is discussed by [Stokke (2004), Theorem 1.8](https://www.impan.pl/shop/en/publication/transaction/download/product/90526#page=8). In the non-unimodular case right-translate \(\rho\) as a measure until \(q(h)\ge2\sup_S q\) for \(h\in K\cup SK\); this preserves left Reiter defects. Choose a nonnegative left-normalized kernel \(k\) supported sufficiently near \(e\), with \(\|k\|_R\le2\). With \(f_h=\delta_h*k\) and \(g_h=k*\delta_{h^{-1}}\), we have \(\|f_h\|_L=\|g_h\|_L=1\) and \(\|g_h*\delta_s\|_R=q(s)\|k\|_R/q(h)\le1\) on the test sets. In the unimodular case both norms agree and no translation is needed. Thus \(\|b_i[g_h*\delta_s]\|_I\le2\); the first-factor left-action bound of four gives
+\[
+\xi_{P,\rho,k}=\int \rho(h)\sum_i a_i[f_h]D(b_i[g_h])\,d\lambda(h),
+\qquad
+\|\xi_{P,\rho,k}\|\le8\|D\|.
+\]
+For \(x=e_{ab}[\varphi]\) supported in the group direction in \(S\), the derivation identity and \(h\mapsto sh\) give
+\[
+\|x\xi_{P,\rho,k}-\xi_{P,\rho,k}x-P[j]D(x)\|
+ \le8\|D\|\int |\varphi(s)|\,\|\delta_s*\rho-\rho\|_L\,d\lambda(s),
+\quad j=\int\rho(h)f_h*g_h\,d\lambda(h).
+\]
+After selecting \(\rho\), shrink the support of \(k\) so that \(h(\operatorname{supp}k)^2h^{-1}\) lies in a prescribed identity neighborhood uniformly over \(K\). Then \(j\) forms an approximate identity in both norms. Take weak-star cluster points first at a fixed corner, then over corners, using \(P[\delta_e]aP[\delta_e]\to a\) and essentiality to pass multiplier limits to the predual. This gives an implementer of norm at most \(8\|D\|\).
+
+For a **one-point base** with mass normalized to one and non-unimodular \(G\), the conclusion fails even for an amenable \(G\). The character \(\chi(f)=\int f\sqrt q\,d\lambda\) is contractive by Cauchy–Schwarz. The functional \(d(f)=\int f\sqrt q\log q\,d\lambda\) is bounded in the raw \(I\)-norm since \(\sqrt q|\log q|\le C(1+q)\). The character identity for \(q\) and the logarithm product rule give \(d(f*g)=\chi(f)d(g)+d(f)\chi(g)\). This is a nonzero derivation into the symmetric scalar bimodule defined by \(\chi\), which is essential and satisfies type (M), but all its inner derivations vanish. The two-point argument above does not identify the raw \(I\)-algebra with the usual left-Haar \(L^1(G)\).
