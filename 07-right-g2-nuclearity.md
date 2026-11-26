@@ -42,3 +42,19 @@ Set \(\partial_\pi(a)(x)=\pi(a)x-x\pi(a)\). It lies in \(V\) and the commutator 
 The commutant-projection argument and predual quotient are part of the classical route to nuclearity, as in [Runde (2020), Theorems 5.1.24 and 7.2.7](https://doi.org/10.1007/978-1-0716-0351-2). The point of this note is the norm estimate which places that particular coefficient in the restricted class.
 
 For a \(C^\ast\)-crossed product \(B\), the same construction can be applied to \(B\) itself. If the restricted coefficient condition tests right \(G_2\) only on the positive elements of the canonical coefficient algebra in \(M(B)\), or on the positive elements of its central multiplier algebra, the witness still qualifies by the multiplier estimate. Consequently universal innerness with either restriction, on contractive essential \(B\)-bimodules, is equivalent to nuclearity of \(B\), without a separate nuclearity hypothesis on the coefficient algebra. This is a test on the completed \(C^\ast\)-crossed product; it does not assert a result for a different Banach-algebra completion.
+
+### Matrix algebras: exact minimum implementer norm
+
+For \(A=M_d\) represented on \(\mathbb C^d\otimes K\) with multiplicity \(k=\dim K\ge 1\), the same commutant derivation has minimum implementer norm
+\[
+  2\left(1-\frac{1}{d\min(d,k)}\right).
+\]
+In particular the universal representation contains the trace GNS summand, so the value is \(2(1-d^{-2})\). In that representation the unique minimizer is \(I-Q_\tau\), where \(Q_\tau=(\tau\otimes\operatorname{id})(\,\cdot\,)\) is viewed as a projection onto \(1_d\otimes B(K)\), and \(\tau\) is normalized trace.
+
+In fact, every bounded \(R\)-bimodule projection is \(Q_\varphi\) for a linear functional \(\varphi\) on \(M_d\) with \(\varphi(1)=1\). This follows by evaluating it on \(a\otimes 1\), whose image commutes with \(R\). Positivity of \(\varphi\) need not be assumed. Averaging \(I-Q_\varphi\) by Weyl conjugations yields \(I-Q_\tau\) without increasing the norm.
+
+Write \(m=\min(d,k)\) and \(c=1/(dm)\). The map \(Q_\tau-cI\) is positive. To see this, on a finite-dimensional multiplicity space it suffices to check rank-one projections \(P=|\Omega\rangle\langle\Omega|\). If \(D=\operatorname{Tr}_{\mathbb C^d}(P)\), then \(Q_\tau(P)=d^{-1}1\otimes D\). Cauchy–Schwarz on the support of \(1\otimes D\) gives \(P\le r(1\otimes D)\), where \(r\le m\) is the Schmidt rank: in Schmidt coordinates \(\|(1\otimes D^{-1/2})\Omega\|^2=r\). For infinite \(K\), compress to finite-dimensional multiplicity subspaces; compression commutes with \(Q_\tau\), so the order inequality holds on all vector quadratic forms. Unless \(c=1\), \((Q_\tau-cI)/(1-c)\) is positive unital, hence contractive. This proves \(\|I-Q_\tau\|\le 2(1-c)\). The case \(c=1\) is \(d=1\) and the derivation is zero.
+
+For equality, use a unit vector \(\Omega\) of Schmidt rank \(m\) with equal Schmidt coefficients. For its projection \(P\), the reflection \(2P-1\) has norm one and \((I-Q_\tau)(2P-1)\Omega=2(1-c)\Omega\). When \(m=d\), \(\langle\Omega,Q_\varphi(P)\Omega\rangle=d^{-2}\) for every \(\varphi(1)=1\). If \(\|I-Q_\varphi\|=2(1-d^{-2})\), equality in Cauchy–Schwarz on this same reflection forces \(Q_\varphi(P)\Omega=d^{-2}\Omega\). Writing out the matrix entries in the Schmidt basis gives \(\varphi(e_{ij})=\delta_{ij}/d\), proving uniqueness even among nonpositive slices.
+
+The full-amplification constant is familiar as the diamond distance between the identity channel and the completely depolarizing channel, by trace duality. See [Pirandola et al. (2019), Fundamental limits to quantum channel discrimination](https://www.nature.com/articles/s41534-019-0162-y) for the channel context. Here it is the exact norm of the smallest implementer in the specific derivation test above. The calculation is verified in writing, not Lean.
