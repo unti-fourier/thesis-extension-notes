@@ -28,5 +28,6 @@
 | 6 | [A norm-one approximate diagonal for a pair groupoid](06-pair-groupoid-schur-amenability.md) | Ordinary Banach amenability of continuous Schur kernels for full-support nonatomic probability; written verification. |
 | 7 | [Uniformly bounded stabilizers and matrix reconstruction](07-uniformly-bounded-stabilizers.md) | Written proof independently checked; no Lean verification or priority claim. |
 | 7 | [Right-ℓ¹ coefficients and the fixed-set quotient](07-fixed-set-quotient.md) | Written-checked annihilator formula for full and reduced crossed products; contrasts with the row-norm algebra. |
+| 7 | [A right G₂ coefficient that detects nuclearity](07-right-g2-nuclearity.md) | Written-checked single-derivation test, also for the coefficient and central multiplier restrictions on a C*-crossed product; not Lean-formalized. |
 
 The stabilizer note proves a comparison for compact Hausdorff actions with uniformly bounded finite stabilizers, without requiring finitely many stabilizer elements or conjugacy classes. It separates the sharp matrix reconstruction constant from the bound for the inverse cohomological comparison.
