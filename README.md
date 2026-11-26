@@ -31,6 +31,7 @@
 | 6 | [A bounded approximate diagonal for an amenable ample groupoid](06-ample-raw-i-amenability.md) | Ordinary Banach amenability for the two-sided counting I-norm, via transport and a bound arbitrarily close to 2; written verification. |
 | 6 | [Ordinary amenability of the two-sided étale groupoid algebra](06-etale-raw-i-amenability.md) | Equivalence for Hausdorff étale counting Haar, with diagonal bound arbitrarily close to 2; written verification. |
 | 6 | [The sharp amenability constant for the counting-I algebra](06-etale-counting-i-sharp-constant.md) | All-bisection decomposition norm equals the counting I-norm; sharp norm-one diagonal for nonempty amenable Hausdorff étale groupoids. Written verification. |
+| 6 | [Propagation of counting-I diagonals under uniform doubling](06-etale-counting-i-doubling-propagation.md) | Both legs have radius O(1/ε) on finite bisection tests, with a doubling-dependent norm bound; written verification. |
 | 7 | [Uniformly bounded stabilizers and matrix reconstruction](07-uniformly-bounded-stabilizers.md) | Written proof independently checked; no Lean verification or priority claim. |
 | 7 | [Right-ℓ¹ coefficients and the fixed-set quotient](07-fixed-set-quotient.md) | Written-checked annihilator formula for full and reduced crossed products; contrasts with the row-norm algebra. |
 | 7 | [A right G₂ coefficient that detects nuclearity](07-right-g2-nuclearity.md) | Written-checked single-derivation test, also for the coefficient and central multiplier restrictions on a C*-crossed product; not Lean-formalized. |
