@@ -50,6 +50,7 @@
 | 6 | [Ordinary Banach amenability for locally trivial twists](06-etale-locally-trivial-twist-amenability.md) | Equivalence and sharp constant 1 for Fell line bundles, with propagation under uniform doubling; written verification. |
 | 6 | [A contractive approximate diagonal for a compact pair groupoid](06-pair-groupoid-raw-i-amenability.md) | Equal-mass continuous partitions give raw I-norm amenability constant 1 for nonatomic full-support Radon probabilities. Written verification only. |
 | 6 | [The amenability constant of a weighted two-point pair groupoid](06-weighted-finite-pair-groupoid-constant.md) | Exact two-point constant and norm-one criterion for finite weighted bases. Written verification only. |
+| 6 | [The raw I-amenability constant with one isolated atom](06-pair-groupoid-one-isolated-atom.md) | Exact constant 1/(1−p) for one isolated atom and a nonatomic summand. Written verification only. |
 | 7 | [Uniformly bounded stabilizers and matrix reconstruction](07-uniformly-bounded-stabilizers.md) | Written proof independently checked; no Lean verification or priority claim. |
 | 7 | [Right-ℓ¹ coefficients and the fixed-set quotient](07-fixed-set-quotient.md) | Written-checked annihilator formula for full and reduced crossed products; contrasts with the row-norm algebra. |
 | 7 | [A right G₂ coefficient that detects nuclearity](07-right-g2-nuclearity.md) | Written-checked single-derivation test, also for the coefficient and central multiplier restrictions on a C*-crossed product; not Lean-formalized. |
