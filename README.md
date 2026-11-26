@@ -12,6 +12,7 @@
 | 3 | [Complex row-norm convolution completion](03-complex-row-convolution-completion.md) | Exact complex norm and product checked in Lean; amenability theorem not covered. |
 | 3 | [A single innerness criterion for Reiter nets](03-inner-derivation-reiter-net.md) | Both directions for the specified derivation verified in Lean in the stated second-countable setting. |
 | 4 | [Sharp implementer bounds](04-sharp-implementer-bounds.md) | Sharp bounds 2 and 1 under the stated coefficient hypothesis, with independent written audit; full theorem not formalized. |
+| 4 | [Exact finite Cayley layer profiles for a free-group boundary](04-free-boundary-finite-cayley-profile.md) | Written-checked finite linear program and sharp cyclic examples; neither Lean-formalized nor a priority claim. |
 | 5 | [Sharp Reiter radius profile of a free group boundary](05-free-group-boundary-radius-profile.md) | Exact range-only value 2/(R+1), verified in writing; full I-defect not covered. |
 | 5 | [The radius profile of a product of two free-group boundaries](05-product-boundary-radius-profile.md) | Exact sum-ball range profile in all radii and its asymptotic constant; written verification. |
 | 5 | [Propagation of approximate diagonals for abelian actions](05-abelian-action-diagonal-propagation.md) | Norm-one Følner-box diagonals, sharp interval width, and a slow infinite-propagation test; written verification. |
