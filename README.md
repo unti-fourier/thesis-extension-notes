@@ -15,6 +15,7 @@
 | 2 | [An Euler class in absolute Hochschild cohomology for a compact lattice quotient](02-lattice-quotient-euler-hochschild.md) | Explicit seminorm-1/2 class for the specified row and Bochner completions. Written verification only. |
 | 2 | [An Euler class for a sphere action without invariant probability](02-sphere-stabilizer-euler-hochschild.md) | Seminorm-1/2 absolute class via bounded induction from a nonamenable stabilizer. Written verification only. |
 | 2 | [Absolute Hochschild classes for a free PSL2 suspension](02-free-psl2-suspension-hochschild.md) | Split embedding of free-group degree-two classes; the action is free, nonamenable and has no invariant probability. Written verification only. |
+| 2 | [The absolute Hochschild comparison in every finite degree](02-all-finite-degrees-absolute-comparison.md) | Contractively split seminorm-isometric comparison in degrees n ≥ 0 for the specified row and Bochner coefficients. Written verification only. |
 | 3 | [Real row-norm convolution completion](03-real-row-convolution-completion.md) | Real Banach algebra identification checked in Lean; complex and amenability theorems not covered. |
 | 3 | [Complex row-norm convolution completion](03-complex-row-convolution-completion.md) | Exact complex norm and product checked in Lean; amenability theorem not covered. |
 | 3 | [A single innerness criterion for Reiter nets](03-inner-derivation-reiter-net.md) | Both directions for the specified derivation verified in Lean in the stated second-countable setting. |
