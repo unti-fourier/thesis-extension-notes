@@ -37,3 +37,19 @@ The average of the two shift variations is half the integral of the level-set ed
  2C(m,m+1)\le C(m,m)+C(m+1,m+1):
 \]
 the second difference of the rectangle sizes is one and that of the removed triangular sizes is at most one. Hence an odd-sum ratio is no smaller than the better adjacent square ratio. The clipped squares attain the bound because each nonempty row and column is an interval and there are \(m\) of each. This proves the formula. For its asymptotic, in the clipped range \(C(m,m)/m=2R+3-m-(R+1)(R+2)/(2m)\), maximized to leading order at \(m\sim R/\sqrt2\). 
+
+## More factors and the grid Cheeger problem
+
+For the product of \(d\) free-group boundaries with all ranks at least two, use the sum of the standard word lengths and consider generator tests. Then, writing \(T_{d,R}=\{n\in\mathbb Z_{\ge0}^d:\sum_i n_i\le R\}\),
+\[
+ \Delta_d(R)=\frac1d\min_{\varnothing\ne F\subseteq T_{d,R}}\frac{|\partial_E F|}{|F|},
+\]
+where the undirected edge boundary is in all of \(\mathbb Z^d\). Iterating the positive ray compression above preserves the sum radius and bounds every transverse difference by its weighted \(\ell^1\) contraction. Conversely any simplex-grid field lifts to the product of rays. The resulting maximum of the grid shift variations is at least their average, whose lower bound is the edge Cheeger ratio divided by \(d\), by layer cake. Averaging the uniform probability of a minimizing set over coordinate permutations yields the reverse inequality by convexity. This last step occurs on the grid, so the free-group ranks need not agree.
+
+A minimizing set may be taken coordinate-symmetric and downward closed. Compress each coordinate fiber to an initial interval. This retains its size and the simplex condition, reduces its own direction's boundary, and does not increase other directions' boundary because \(|A\triangle B|\ge\big||A|-|B|\big|\) for adjacent fibers. Previously obtained downward closure survives by inclusion of the corresponding fibers. Averaging the downward closed indicator over permutations and taking a nonempty level set of minimum ratio now gives a symmetric downward closed minimizer: all positive level-set ratios are at least the optimum, and layer cake gives equality in the aggregate.
+
+For \(d=3,R=6\), the exact value is \(10/17\), while uniform probabilities on clipped cubes have best value \(16/27\). To see the finite certificate, the three plane projections of a symmetric downward closed set agree with a symmetric downward closed \(P\subseteq T_{2,R}\). Every direction's boundary is \(2|P|\). The maximal set with that projection consists of the triples in \(T_{3,R}\) whose three coordinate pairs all lie in \(P\). Each pair in \(P\) appears in a triple with third coordinate \(0\), so the projection really is \(P\). If \(h_i\) are the row sizes of \(P\), its maximal volume is
+\[
+ B(h)=\sum_{i=0}^R\sum_{0\le j<h_i}\min(h_i,h_j,R+1-i-j).
+\]
+The admissible profiles are nonincreasing nonnegative integer sequences with \(h_i\le R+1-i\) and \(j<h_i\) iff \(i<h_j\). At \(R=6\), their counts by \(h_0=1,\ldots,7\) are \(1,2,4,8,14,20,20\); the corresponding minima of \(17\sum_i h_i-5B(h)\) are \(12,28,18,0,8,27,46\). These integers can be reproduced by iterating each \(h_i\) from \(0\) to \(\min(7-i,h_{i-1})\) with \(h_{-1}=7\), then filtering on symmetry and nonemptiness. Equality occurs for \(h=(4,4,4,3,0,0,0)\), the projection of the clipped four-by-four-by-four cube with the permutations of \((3,3,0)\) removed. It gives volume \(51\) and projection size \(15\). For the clipped cubes alone the projection sizes and volumes are \((1,1),(4,8),(9,27),(16,54),(22,72),(26,81),(28,84)\), giving the claimed strict comparison. The reduction and integer certificate were checked in writing, not in Lean.
