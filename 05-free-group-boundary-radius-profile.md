@@ -156,3 +156,17 @@ The upper bound uses the uniform measure on the first \(R+1\) ray vertices: for 
 For the lower bound, observe the outward random walk in the first proof only at multiples of \(L\). When starting at distance \(k\le R\) from the center of the test ball, with \(J\) shared initial edges with the path toward the center, its visits to the ball last through time \(R-k+2J\). Thus the number of sampled visits is \(1+\lfloor(R-k+2J)/L\rfloor\). The bound \(2\mathbb E J\le 2k/q\le k\) gives an expected count at most \(M=1+R/L\). If the initial point is outside the ball, condition on first entrance and the current sampling phase. The visits after entrance form one interval of integer times; the phase offset can only decrease the count compared to starting the sampling at entrance. The same \(M\) applies. The occupation recursion with the sampled transition and the centered test \(H-M/2\) now gives \(1\le M/N+M\varepsilon/2\) after \(N\) steps, exactly as in the generator case. In this lower bound only distance-\(L\) comparisons are used.
 
 In particular \(R\Delta_{\le L}(R)\to2L\) for fixed \(L\), and \(\Delta_{\le L}(R)/(2L/R)\to1\) uniformly when \(1\le L\le m(R)=o(R)\). These bounds are independently checked in writing, not in Lean.
+
+## The longest nontrivial test length
+
+For \(R\ge2\), put \(q=2r-1\), \(m=2r q^{R-1}\) and \(t_R=1-\Delta_{\le 2R}(R)/2\). Then
+\[
+ \frac1{m+R/2}\le t_R\le\frac1{m+1},
+ \qquad
+ q^R(2-\Delta_{\le 2R}(R))\longrightarrow\frac{2r-1}{r}.
+\]
+If only lengths \(2R-1\) and \(2R\) are tested, the optimal overlap is \(1/(m+1)\). For all tests the displayed bounds coincide at \(R=2\).
+
+For the upper bound on overlap, take any vertex field whose overlaps at the tested distances are at least \(t\). Every point at radius \(R\) has mass at least \(t\), since it is the only common point for a pair of radius-\(R\) balls with that midpoint at distance \(2R\). At distance \(2R-1\) the common support contains only the two middle vertices, each lying at radius \(R-1\) from one of the starts. If \(M\) is the supremum of an individual radius-\((R-1)\) mass, the two-point comparison forces every radius-\((R-1)\) mass to be at least \((t-M)_+\). Take a row with a mass close to \(M\) and count at least one other point on that layer. Thus \(1\ge mt+M+(t-M)_+\ge(m+1)t\). For just the two longest distances put unit weights on the entire outer sphere and on the single ancestor at depth \(R-1\) toward the end. For distance \(2R-1\) one of the two middle vertices is such an ancestor of one start, and for distance \(2R\) the midpoint is on both spheres. This attains the bound.
+
+For all distances use weight one on the whole outer sphere, weight one on each positive ray depth \(j<R\) of parity opposite to \(R\), and, for odd \(R\), weight \(1/2\) at the start. The total is \(m+R/2\). At even distance \(2k\), one common sphere vertex is found by going \(R-k\) steps off the segment from its midpoint. At odd distance \(\ell\), let \(a,b\) be the two distances to the ray meeting point. If \(\ell>R\), take \(a\ge b\) and the ray point at depth \(j=\ell-R\) from the first start; it lies on the segment and on the other start's sphere. If \(\ell<R\), take \(a<b\) and \(j=R-(b-a)\); the ray point is on the common tail at distance \(R\) from the other start. Both depths have the required parity. If \(\ell=R\) is odd, the two starts contribute \(1/2\) each. Thus the unnormalized overlap is always at least one, proving the lower bound and hence the limit. These estimates are independently checked in writing, not in Lean.
