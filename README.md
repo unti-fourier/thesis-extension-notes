@@ -16,6 +16,7 @@
 | 5 | [The radius profile of a product of two free-group boundaries](05-product-boundary-radius-profile.md) | Exact sum-ball range profile in all radii and its asymptotic constant; written verification. |
 | 5 | [Propagation of approximate diagonals for abelian actions](05-abelian-action-diagonal-propagation.md) | Norm-one Følner-box diagonals, sharp interval width, and a slow infinite-propagation test; written verification. |
 | 5 | [Sharp diagonal propagation on the integer diamond](05-z2-diamond-diagonal-propagation.md) | Exact sharp two-leg propagation bound for compact global ℤ²-actions; written verification. |
+| 5 | [The first clipped-cube failure in the integer octahedron](05-z3-octahedron-first-clipped-cube-failure.md) | Exact translation defects through radius four; the unique optimizer at radius four is not a clipped box. Written and finite integer verification. |
 | 6 | [Symmetric local probability kernels](06-symmetric-local-haar-kernels.md) | Pair-groupoid and general compact-unit Haar kernel existence checked in Lean. |
 | 6 | [Innerness and Reiter fields for étale groupoids](06-etale-innerness-reiter.md) | Written-checked equivalence for a specified derivation with compact units; not fully formalized. |
 | 6 | [A Johnson-type criterion for Hausdorff étale groupoids](06-etale-essential-core.md) | All derivations with right type (M) on the essential core, for any full continuous left Haar system; written proof, not formalized. |
