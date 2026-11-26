@@ -143,3 +143,16 @@ There is also a finite dual certificate using only subsets \(U\) of the support-
         \frac{\sum_\sigma w_\sigma c^\sigma(U)}{n(U)} .
 \]
 For the underlying graph optimization, see [Bell–Nagórko (2021 preprint), §2](https://arxiv.org/html/2109.04891#S2), applied to the graph of pairs at distance at most \(L\) and with the prescribed balls taken in the original tree. The finite orbit reduction above is checked in writing, not in Lean; no priority claim is made.
+
+## Uniform asymptotics from a sampled walk
+
+For \(L\ge1\), the profile above satisfies
+\[
+ \frac{2L}{R+L}\ \le\ \Delta_{\le L}(R)\
+ \le\ \min\{2,\,2L/(R+1)\}.
+\]
+The upper bound uses the uniform measure on the first \(R+1\) ray vertices: for starts at distance at most \(L\), each ray reaches the common tail by step \(L\).
+
+For the lower bound, observe the outward random walk in the first proof only at multiples of \(L\). When starting at distance \(k\le R\) from the center of the test ball, with \(J\) shared initial edges with the path toward the center, its visits to the ball last through time \(R-k+2J\). Thus the number of sampled visits is \(1+\lfloor(R-k+2J)/L\rfloor\). The bound \(2\mathbb E J\le 2k/q\le k\) gives an expected count at most \(M=1+R/L\). If the initial point is outside the ball, condition on first entrance and the current sampling phase. The visits after entrance form one interval of integer times; the phase offset can only decrease the count compared to starting the sampling at entrance. The same \(M\) applies. The occupation recursion with the sampled transition and the centered test \(H-M/2\) now gives \(1\le M/N+M\varepsilon/2\) after \(N\) steps, exactly as in the generator case. In this lower bound only distance-\(L\) comparisons are used.
+
+In particular \(R\Delta_{\le L}(R)\to2L\) for fixed \(L\), and \(\Delta_{\le L}(R)/(2L/R)\to1\) uniformly when \(1\le L\le m(R)=o(R)\). These bounds are independently checked in writing, not in Lean.
