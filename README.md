@@ -20,6 +20,7 @@
 | 5 | [Exact optimization and uniqueness in the integer octahedron](05-z3-octahedron-exact-optimization.md) | Arbitrary-radius exact algorithm with min-cut certificates and an optimizer uniqueness test; written verification. |
 | 5 | [The anisotropic Cheeger limit of the integer octahedron](05-z3-octahedron-continuum-cheeger-limit.md) | Explicit limit constant and finite-radius bounds; convergence of minimizing subsequences. Written verification. |
 | 5 | [Uniqueness of the symmetric octahedral Cheeger set](05-z3-octahedron-symmetric-cheeger-uniqueness.md) | Uniqueness among symmetric downsets and full convergence of symmetric lattice minimizers; written verification. |
+| 5 | [Uniqueness of the octahedral Cheeger set without symmetry assumptions](05-z3-octahedron-cheeger-rigidity.md) | Rigidity from coordinate Steiner equality and octahedral boundary contact; written verification. |
 | 6 | [Symmetric local probability kernels](06-symmetric-local-haar-kernels.md) | Pair-groupoid and general compact-unit Haar kernel existence checked in Lean. |
 | 6 | [Innerness and Reiter fields for étale groupoids](06-etale-innerness-reiter.md) | Written-checked equivalence for a specified derivation with compact units; not fully formalized. |
 | 6 | [A Johnson-type criterion for Hausdorff étale groupoids](06-etale-essential-core.md) | All derivations with right type (M) on the essential core, for any full continuous left Haar system; written proof, not formalized. |
