@@ -12,6 +12,7 @@
 | 2 | [An absolute degree-two witness](02-absolute-hochschild-degree-two.md) | Written-checked characterization for countable discrete actions with a norm-one witness; not fully formalized. |
 | 2 | [Locally compact groups and absolute degree-two Hochschild cohomology](02-locally-compact-absolute-hh2-split-injection.md) | Written-checked split injection for specified coefficients and norms; also a strict-extension counterexample. Not Lean-formalized. |
 | 2 | [An Euler class in absolute Hochschild cohomology for a compact lattice quotient](02-lattice-quotient-euler-hochschild.md) | Explicit seminorm-1/2 class for the specified row and Bochner completions. Written verification only. |
+| 2 | [An Euler class for a sphere action without invariant probability](02-sphere-stabilizer-euler-hochschild.md) | Seminorm-1/2 absolute class via bounded induction from a nonamenable stabilizer. Written verification only. |
 | 3 | [Real row-norm convolution completion](03-real-row-convolution-completion.md) | Real Banach algebra identification checked in Lean; complex and amenability theorems not covered. |
 | 3 | [Complex row-norm convolution completion](03-complex-row-convolution-completion.md) | Exact complex norm and product checked in Lean; amenability theorem not covered. |
 | 3 | [A single innerness criterion for Reiter nets](03-inner-derivation-reiter-net.md) | Both directions for the specified derivation verified in Lean in the stated second-countable setting. |
