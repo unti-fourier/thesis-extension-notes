@@ -94,3 +94,22 @@ In particular the root exists and is unique by strict decrease and opposite endp
 For the global lower bound, compress a lattice minimizing set along each coordinate to initial intervals. This preserves cardinality, decreases edge boundary, and preserves downward closure in any previously compressed axis. Average the resulting indicator over coordinate permutations and use discrete layer cake; some nonempty level set remains minimizing and is symmetric and downward closed. Scaling its union of unit cubes by \(1/(R+3)\) gives one of the sets considered above. Thus \(3(R+3)\Delta_3(R)\ge 2/c_*\). The continuum comparison already proved above now yields \(h_3\ge2/c_*\). Also \(Q(9/64)>0\) (use \(\sqrt2>7/5\)), so \(2/c_*<128/9<612/43\), strictly improving the earlier rational candidate without numerical rounding.
 
 The calculation and reduction were checked in writing, not in Lean. [Kawohl and Novaga (2008), Theorem 5.1](https://cvgmt.sns.it/document/1248/#page=8) treats bounded planar convex domains, not this three-dimensional case. Priority for this exact simplex value remains unverified.
+
+## Exact finite three-factor profile
+
+Write \(H_R=3\Delta_3(R)\) for the finite edge Cheeger constant. It can be computed in \(O((R+1)^2)\) integer arithmetic operations. Compress and symmetrize as above, and let \(P\) be the common coordinate projection of a minimizing downset. The boundary is \(6|P|\), so keep \(P\) fixed and fill all triples whose three coordinate pairs belong to \(P\). This keeps the projection (append a zero to any pair) and only improves the ratio. To count these triples, take \(x\ge y\ge z\); once \((x,y)\) belongs to the projection, the third coordinate runs from zero through \(m=\min(y,R-x-y)\).
+
+For a pair \(x\ge y\) let \(p_{xy}=2\) off the diagonal, \(1\) on it, and let \(v_{xy}\) count the allowed triples with all distinct permutations counted once. For \(x>y\), \(v_{xy}=6(m+1)-3\mathbf1_{\{m=y\}}\); for \(x=y\), \(v_{xy}=3(m+1)-2\mathbf1_{\{m=y\}}\). In the half-projection the ratio is \(6\sum p_{xy}/\sum v_{xy}\). It suffices to try
+\[
+\begin{gathered}
+\lceil(R+1)c_*\rceil\le j\le\lceil(R+3)c_*\rceil,\qquad b=R+1-j,\\
+0\le k\le\lfloor R/2\rfloor,\qquad k\le a\le\max(k,b),\\
+\{0\le y\le x\le k\}\ \cup\
+\{k<x\le a,\ 0\le y\le\min(k,b-x)\}.
+\end{gathered}
+\]
+There are at most two values of \(j\). The first triangle is forced by the last diagonal point \((k,k)\); do not apply the extra cut to that forced part.
+
+Indeed let \(c_R=2/H_R\) and, for a trial \(c>0\), maximize \(\sum(v_{xy}/3-cp_{xy})\) at fixed \(k\). Above the forced triangle the objective for row \(x\) is twice the sum of \(\min(y+1/2,R-x+1-y)-c\) over its initial interval. With \(b=R+1-\lceil c\rceil\), the summands are first negative then nonnegative through \(\min(k,b-x)\), with any later admissible summands strictly negative. Compare the entire sum through this endpoint with the empty row. The largest maximizing endpoints decrease with \(x\), since allowed endpoints decrease and each shared summand is nonincreasing with \(x\); thus the separately chosen rows give an allowable downset. At \(c=c_R\) the maximum is zero, and \(c_R\) lies between \((R+1)c_*\) and \((R+3)c_*\) by the continuum comparison. This proves the stated candidate list. The row weights are sums of at most two arithmetic progressions. Increment \(k\) to accumulate the forced triangles and increment \(a\) to accumulate extra rows; this gives the quadratic operation count. The two ceilings can be decided exactly by signs of \(Q\) at rational bounds.
+
+At \(R=6\), \((k,a,b)=(2,3,5)\) gives projection size \(15\) and volume \(51\), so \(H_6/3=10/17\). At \(c_R=17/15\), row \(x=4\) has positive last summand but negative total; it remains empty. Rounding both continuous caps independently to the nearest integer already fails at \(R=4\): \((2,3)\) yields \(4/5\), while the exact value is \(18/23\), obtained by \((2,4)\). The finite formula was checked in writing and compared on \(0\le R\le8\) with direct enumeration of all symmetric downward-closed projections. No Lean verification is claimed.
