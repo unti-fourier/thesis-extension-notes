@@ -18,6 +18,7 @@
 | 3 | [Complex row-norm convolution completion](03-complex-row-convolution-completion.md) | Exact complex norm and product checked in Lean; amenability theorem not covered. |
 | 3 | [A single innerness criterion for Reiter nets](03-inner-derivation-reiter-net.md) | Both directions for the specified derivation verified in Lean in the stated second-countable setting. |
 | 3 | [A sharp correction bound for essential-core reduction](03-essential-core-sharp-correction.md) | Optimal constant 2 for the residual derivation, even for each nonzero algebra with a contractive two-sided approximate identity. Written verification only. |
+| 3 | [The right C(X) condition on the essential core](03-essential-core-geometricity-row-bochner.md) | Canonical compatibility and counterexample to transport from row to Bochner modules. Written verification only. |
 | 4 | [Sharp implementer bounds](04-sharp-implementer-bounds.md) | Sharp bounds 2 and 1 under the stated coefficient hypothesis, with independent written audit; full theorem not formalized. |
 | 4 | [Exact finite Cayley layer profiles for a free-group boundary](04-free-boundary-finite-cayley-profile.md) | Written-checked finite linear program and sharp cyclic examples; neither Lean-formalized nor a priority claim. |
 | 4 | [The exact cyclic profile before wraparound](04-free-boundary-no-wrap-cyclic-profile.md) | Written-checked closed formula at every non-wrapping radius; one clipped square always attains the optimum. |
