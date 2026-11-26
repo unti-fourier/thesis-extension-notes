@@ -5,6 +5,7 @@
 | Direction | Note | Status |
 | --- | --- | --- |
 | 1 | [Type (M) coefficients and the Bochner tensor identification](01-type-m-bochner-tensor.md) | Exact row completion and a conditional tensor-composition theorem checked in Lean; full import-level assembly remains unverified. |
+| 1 | [The minimum norm of a single implementer under stabilization](01-stable-compacts-implementer-norm.md) | Exact norms for the specified test on compact-operator bundles, without invariant corners; written verification. |
 | 2 | [A measurable Reiter gap and a compact metrizable factor](02-measurable-reiter-gap.md) | Common measurable lower bound checked in Lean; factor argument checked in writing; Hochschild nonvanishing not covered. |
 | 2 | [An absolute degree-two witness](02-absolute-hochschild-degree-two.md) | Written-checked characterization for countable discrete actions with a norm-one witness; not fully formalized. |
 | 3 | [Real row-norm convolution completion](03-real-row-convolution-completion.md) | Real Banach algebra identification checked in Lean; complex and amenability theorems not covered. |
