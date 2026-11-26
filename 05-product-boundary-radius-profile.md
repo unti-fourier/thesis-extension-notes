@@ -53,3 +53,13 @@ For \(d=3,R=6\), the exact value is \(10/17\), while uniform probabilities on cl
  B(h)=\sum_{i=0}^R\sum_{0\le j<h_i}\min(h_i,h_j,R+1-i-j).
 \]
 The admissible profiles are nonincreasing nonnegative integer sequences with \(h_i\le R+1-i\) and \(j<h_i\) iff \(i<h_j\). At \(R=6\), their counts by \(h_0=1,\ldots,7\) are \(1,2,4,8,14,20,20\); the corresponding minima of \(17\sum_i h_i-5B(h)\) are \(12,28,18,0,8,27,46\). These integers can be reproduced by iterating each \(h_i\) from \(0\) to \(\min(7-i,h_{i-1})\) with \(h_{-1}=7\), then filtering on symmetry and nonemptiness. Equality occurs for \(h=(4,4,4,3,0,0,0)\), the projection of the clipped four-by-four-by-four cube with the permutations of \((3,3,0)\) removed. It gives volume \(51\) and projection size \(15\). For the clipped cubes alone the projection sizes and volumes are \((1,1),(4,8),(9,27),(16,54),(22,72),(26,81),(28,84)\), giving the claimed strict comparison. The reduction and integer certificate were checked in writing, not in Lean.
+
+## Passing to a continuous simplex
+
+Let \(h_d\) be the infimum of \(P_1(E)/|E|\) over positive-volume finite-perimeter sets \(E\subset \Sigma_d=\{x_i\ge0:\sum_i x_i\le1\}\), with \(P_1(E)=\sum_i |D_i\mathbf1_E|(\mathbb R^d)\). This counts the entire perimeter, including faces on the simplex boundary. Then for every \(R\ge0\)
+\[
+ \frac{h_d}{d(R+d)}\le \Delta_d(R)\le \frac{h_d}{d(R+1)}.
+\]
+In particular \(R\Delta_d(R)\to h_d/d\). For \(d=2\) this and the exact formula above give \(h_2=4+2\sqrt2\).
+
+For the lower bound put a unit cube at each vertex of a set in \(T_{d,R}\), extending in the positive coordinate directions. The resulting volume is its cardinality and its anisotropic perimeter is exactly the edge boundary. The union lies in \((R+d)\Sigma_d\). For the upper bound shrink \(E\) about the simplex barycenter by \(1-\delta\) and then dilate by \(R+1\), giving \(A\) strictly inside \((R+1)\Sigma_d\). For \(u\in[0,1)^d\) sample the lattice set \(F_u=\{n:n+u\in A\}\). Every sampled integer coordinate is nonnegative and every coordinate sum is an integer less than \(R+1\), so \(F_u\subset T_{d,R}\). Integrating over \(u\), the cardinality is \(|A|\) and the direction-\(i\) edge count is \(\int_{\mathbb R^d}|\mathbf1_A(x+e_i)-\mathbf1_A(x)|\,dx\), at most \(|D_i\mathbf1_A|(\mathbb R^d)\). The last bound follows by integrating the fundamental theorem of calculus for smooth approximants obtained by mollification, then taking the \(L^1\) limit. The finite Cheeger bound holds for every sampled set, including the empty one with both counts zero. Therefore \(d\Delta_d(R)|A|\le P_1(A)\); let \(\delta\) decrease to zero and take the infimum over \(E\). The comparison is checked in writing, not in Lean.
