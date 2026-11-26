@@ -75,4 +75,4 @@ P(F\ast\iota(b))=P(F)\ast b,\qquad P\iota(b)=b .
 
 この Haar 系の局所積表示は、各 range fiber における安定化群の左不変性から得られる。実際、チャートの source 部分に台をもつ非負連続関数を掛けて群座標に押し出すと、その測度は左 Haar の定数倍になる。群座標に質量一の連続コンパクト台関数を取って定数を読み取れば、局所基底の Radon 測度が得られる。積関数で照合すれば局所積表示が従い、range 間の左移動により source 側の局所基底測度は共通になる。これは局所自明表示のある gauge groupoid の議論であって、一般の Haar groupoid への主張ではない。
 
-中間原子による構成は[直積の場合](06-infinite-atomic-nonunimodular-product-diagonal.md)を使う。群の近似対角と `L¹H` の amenability から H の amenability を得る箇所は [Stokke (2004), Theorem 1.8 and Corollary 1.10](https://www.impan.pl/shop/en/publication/transaction/download/product/90526#page=8) を参照。
+中間原子による構成は[直積の場合](06-infinite-atomic-nonunimodular-product-diagonal.md)を使う。群の近似対角と `L¹(H)` の amenability から H の amenability を得る箇所は [Stokke (2004), Theorem 1.8 and Corollary 1.10](https://www.impan.pl/shop/en/publication/transaction/download/product/90526#page=8) を参照。
