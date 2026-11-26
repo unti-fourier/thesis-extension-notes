@@ -9,6 +9,7 @@
 | 1 | [A central mean need not descend to the Glimm space](01-nonhausdorff-glimm-central-mean.md) | Explicit separable CCR example; written verification, no Lean formalization. |
 | 2 | [A measurable Reiter gap and a compact metrizable factor](02-measurable-reiter-gap.md) | Common measurable lower bound checked in Lean; factor argument checked in writing; Hochschild nonvanishing not covered. |
 | 2 | [An absolute degree-two witness](02-absolute-hochschild-degree-two.md) | Written-checked characterization for countable discrete actions with a norm-one witness; not fully formalized. |
+| 2 | [Locally compact groups and absolute degree-two Hochschild cohomology](02-locally-compact-absolute-hh2-split-injection.md) | Written-checked split injection for specified coefficients and norms; also a strict-extension counterexample. Not Lean-formalized. |
 | 3 | [Real row-norm convolution completion](03-real-row-convolution-completion.md) | Real Banach algebra identification checked in Lean; complex and amenability theorems not covered. |
 | 3 | [Complex row-norm convolution completion](03-complex-row-convolution-completion.md) | Exact complex norm and product checked in Lean; amenability theorem not covered. |
 | 3 | [A single innerness criterion for Reiter nets](03-inner-derivation-reiter-net.md) | Both directions for the specified derivation verified in Lean in the stated second-countable setting. |
