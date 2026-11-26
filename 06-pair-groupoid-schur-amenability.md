@@ -109,3 +109,33 @@ For \(x=e_{ab}[\varphi]\) supported in the group direction in \(S\), the derivat
 After selecting \(\rho\), shrink the support of \(k\) so that \(h(\operatorname{supp}k)^2h^{-1}\) lies in a prescribed identity neighborhood uniformly over \(K\). Then \(j\) forms an approximate identity in both norms. Take weak-star cluster points first at a fixed corner, then over corners, using \(P[\delta_e]aP[\delta_e]\to a\) and essentiality to pass multiplier limits to the predual. This gives an implementer of norm at most \(8\|D\|\).
 
 For a **one-point base** with mass normalized to one and non-unimodular \(G\), the conclusion fails even for an amenable \(G\). The character \(\chi(f)=\int f\sqrt q\,d\lambda\) is contractive by Cauchy–Schwarz. The functional \(d(f)=\int f\sqrt q\log q\,d\lambda\) is bounded in the raw \(I\)-norm since \(\sqrt q|\log q|\le C(1+q)\). The character identity for \(q\) and the logarithm product rule give \(d(f*g)=\chi(f)d(g)+d(f)\chi(g)\). This is a nonzero derivation into the symmetric scalar bimodule defined by \(\chi\), which is essential and satisfies type (M), but all its inner derivations vanish. The two-point argument above does not identify the raw \(I\)-algebra with the usual left-Haar \(L^1(G)\).
+
+## Detecting nonamenable constant isotropy with a single derivation
+
+The converse holds without a restriction on the number of points and, for the construction below, without atomicity: let \(X\) be nonempty compact Hausdorff with a full-support finite Radon measure and \(G\) locally compact Hausdorff. Normalize \(\mu(X)=1\) (rescale kernels if necessary). If \(G\) is nonamenable, there is a non-inner derivation of norm at most two for the raw \(I\)-algebra of \(X\times G\times X\), into the dual of an essential contractive bimodule satisfying right \(C(X)\)-type (M).
+
+Let \(F\) be the bounded continuous functions \(w\) on \(G\) for which \(g\mapsto w(g\,\cdot)\) is continuous in sup norm; let \(V=F/\mathbb C1\), \(b(g)=\delta_g-\delta_e\) in \(V^*\). The right action \((w\cdot g)(t)=w(gt)\) gives \(b(gh)=g\cdot b(h)+b(g)\). Use
+\[
+ E=C(X)\widehat\otimes_\pi L^1(X,\mu;V)
+\]
+with \(A\) acting on the first factor from the left by the integrated kernel and on the second from the right by convolution with the \(V\)-action. Precisely,
+\[
+ (ap)(x)=\int a(x,g,y)p(y)\,d\lambda(g)d\mu(y),
+ \quad
+ (\eta a)(y)=\int a(x,g,y)(\eta(x)\cdot g)\,d\lambda(g)d\mu(x).
+\]
+Both action norms are bounded by the row norm. Right multiplication by positive functions from \(C(X)\) on the second factor satisfies type (M) by the \(L^1\) norm, then on \(E\) by the projective norm. On the left, the rank-one kernels \(p(x)k(g)\), where \(k\ge0\) has left mass one, send the constant function to \(p\). On the right, \(k(g)q(y)\) sends a constant \(V\)-section \(w\) to \(q(y)(w\cdot k)\); these span a dense subspace as \(k\) concentrates at the identity. Thus \(E\) is essential.
+
+The formula
+\[
+ \langle D(a),p\otimes\eta\rangle
+  =\int a(x,g,y)p(y)\langle b(g),\eta(x)\rangle
+      \,d\mu(x)d\lambda(g)d\mu(y)
+\]
+extends by the row bound since \(\|b(g)\|\le2\). The cocycle rule gives the derivation identity by splitting \(b(gh)\) in the convolution integral. If \(D(a)=aT-Ta\), take the constant kernel \(J(f)(x,g,y)=f(g)\) for \(f\in C_c(G)\) and test on \(1\otimes\underline w\) for constant \(V\)-sections. With \(\xi(w)=T(1\otimes\underline w)\) this gives, weak-star,
+\[
+ \int f(g)\,[b(g)-g\cdot\xi+\xi]\,d\lambda(g)=0.
+\]
+Continuity against each \(w\) and full support of \(\lambda\) imply \(b(g)=g\cdot\xi-\xi\) for every \(g\). Thus \(\delta_e-\xi\) on \(F\) is invariant and has mass one. Its total variation, normalized, is an invariant mean (equivalently use the measure representation on the spectrum of \(F\)). This contradicts nonamenability by the locally compact invariant-mean criterion; see [Pestov and Schneider (2023 preprint / 2025 journal), §1](https://arxiv.org/pdf/2301.07828). No comparison with the ordinary amenability of the raw \(I\)-algebra is needed.
+
+Together with the preceding written sufficiency result, for a purely atomic full-support compact base of at least two points this restricted condition is equivalent to amenability of the constant isotropy group. This is a written verification, not formalization. 
