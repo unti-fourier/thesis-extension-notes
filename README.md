@@ -26,6 +26,7 @@
 | 6 | [Topological amenability and approximate continuous primitives](06-continuous-bounded-cocycles.md) | Written-checked approximate criterion in all positive degrees, global-norm properness test, and ample counterexample to exact vanishing; not formalized. |
 | 6 | [Exact bounded cohomology of bidual sections for Haar groupoids](06-etale-bidual-bounded-cohomology.md) | Written-checked in all positive degrees for full continuous Haar systems, with a single first-degree test; not formalized. |
 | 6 | [A norm-one approximate diagonal for a pair groupoid](06-pair-groupoid-schur-amenability.md) | Ordinary Banach amenability of continuous Schur kernels for full-support nonatomic probability; written verification. |
+| 6 | [A bounded approximate diagonal for an amenable ample groupoid](06-ample-raw-i-amenability.md) | Ordinary Banach amenability for the two-sided counting I-norm, via transport and a bound arbitrarily close to 2; written verification. |
 | 7 | [Uniformly bounded stabilizers and matrix reconstruction](07-uniformly-bounded-stabilizers.md) | Written proof independently checked; no Lean verification or priority claim. |
 | 7 | [Right-ℓ¹ coefficients and the fixed-set quotient](07-fixed-set-quotient.md) | Written-checked annihilator formula for full and reduced crossed products; contrasts with the row-norm algebra. |
 | 7 | [A right G₂ coefficient that detects nuclearity](07-right-g2-nuclearity.md) | Written-checked single-derivation test, also for the coefficient and central multiplier restrictions on a C*-crossed product; not Lean-formalized. |
