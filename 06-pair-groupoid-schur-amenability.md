@@ -30,3 +30,31 @@ Indeed, all matrix diagonals have the form \(D_C=\sum_{i,j,k}c_{jk}E_{ij}\otimes
 has norm at most one, since \(\|a\|_I\ge |a_{22}|+\sqrt t\max(|a_{12}|,|a_{21}|)\) and likewise for \(b\). It takes the value \((1+t)/2\) on every \(D_C\), proving sharpness.
 
 In arbitrary finite dimension, a norm-one diagonal would be a convex combination of products of two contractions in the projective unit ball, with products averaging to the identity. The normalized real trace exposes the identity in the Schur unit ball: equality forces every diagonal entry to be \(1\), then the row bound forces the off-diagonal entries to vanish. Thus each tensor factor is an invertible contraction with contractive inverse. In the integral-operator coordinates \(m_j f(i,j)\), it is simultaneously an isometry of \(\ell^\infty\) and of \(\ell^1(m)\), hence is a phase-weighted permutation that preserves the point masses. All first factors would then be block diagonal along equal-weight blocks. This contradicts the displayed description of \(D_C\) for unequal weights, because some \(c_{jj}\ne0\) and the corresponding terms \(E_{ij}\otimes E_{ji}\) run over every \(i\). Conversely, for equal weights the signed-permutation average gives a norm-one diagonal. Finite corner bounds alone are not being asserted for the infinite completion. This section was independently checked in writing.
+
+## Infinite compact spaces and mixed measures
+
+Let \(X\) be infinite compact Hausdorff and let \(\mu\) be a finite positive full-support Radon measure of total mass \(M\). Write \(d\) for its nonatomic mass. The amenability constant is \(M/d\) for \(d>0\); the algebra is not amenable for \(d=0\). The nonatomic part need not have full support.
+
+For the lower bound, for a Borel set \(S\) use the bilinear test
+\[
+ B_S(a,b)=M^{-1}\int_S \Big(\int a(x,z)\,d\mu(x)\Big)
+                          \Big(\int b(z,y)\,d\mu(y)\Big)d\mu(z).
+\]
+It has norm at most \(\mu(S)/M\). For a bounded approximate diagonal \(D_\alpha\), \(B_X(D_\alpha)\to1\) by testing the approximate identity of products on the constant kernel. If \(z\) is an atom of mass \(m_z\), the map \(K_z(a\otimes b)(x,y)=m_z a(x,z)b(z,y)\) has sup norm at most \(m_z^{-1}\|a\|_I\|b\|_I\). It intertwines outer convolution. Thus the \(K_z(D_\alpha)\) give bounded Hilbert–Schmidt operators on \(L^2(\mu)\) whose weak cluster points commute with the rank-one operators constructed from continuous functions. By density these cluster points are scalar identities and hence zero, because \(L^2(\mu)\) is infinite-dimensional. Therefore \(B_{\{z\}}(D_\alpha)\to0\). Removing finitely many atoms, then letting their total mass increase to \(M-d\), proves \(1\le(\sup_\alpha\|D_\alpha\|_\pi)d/M\).
+
+For the construction, use two different continuous families. At the endpoints, take a partition \(p_i\) on a fine finite open cover and compact cores as above, but without balancing cell masses. A finite irredundant cover gives each cell a nonempty open subset and hence positive mass. For \(m_i=\int p_i\,d\mu\) and the same \(G\) as above, the core error gives both the absolute row-sum and the mass-weighted absolute column-sum bound \(\|G-I\|\le\varepsilon\) in the respective matrix norms. The weighted bound follows from \(m_iG_{ij}=m_jG_{ji}\). Put \(q_i=\sum_j(G^{-1})_{ij}p_j/m_j\); then \(\int q_i p_j=\delta_{ij}\) and
+\[
+ \max\{\max_i\|q_i\|_1,\|\sum_i m_i|q_i|\|_\infty\}\le (1-\varepsilon)^{-1}.
+\]
+The matrix units \(p_i\boxtimes q_j\), where \((p\boxtimes q)(x,y)=p(x)q(y)\), have sum of diagonal units \(P\) within \(\varepsilon/(1-\varepsilon)\) of the local approximate identity \(\sum_i p_i\boxtimes(p_i/m_i)\). Fine covers here mean small oscillation for the given finite collection of continuous kernels in both variables, which suffices also in the nonmetrizable case.
+
+At the intermediate variable only, partition the nonatomic mass into \(N\) sets of mass \(t=d/N\). By inner and outer regularity, choose disjoint compact cores and then disjoint open neighborhoods with original \(\mu\)-mass at most \((1+\varepsilon)t\). Continuous cutoffs \(0\le u_l\le1\) supported there can satisfy \(\int u_l^2\ge(1-\varepsilon)t\). Put \(v_l=u_l/\int u_l^2\). Then
+\[
+ D=N^{-1}\sum_{i,l}(p_i\boxtimes v_l)\otimes(u_l\boxtimes q_i)
+\]
+has product \(P\) and commutes with all the matrix units. For the projective bound, assign disjoint blocks \(L_i\) of sizes \(k_i=\lfloor Nm_i/M\rfloor\) in the \(N\)-element index set. For sufficiently large \(N\) each \(k_i\ge(1-\varepsilon)Nm_i/M>0\). Apply a uniformly random cyclic shift to the blocks, and independent signs \(\sigma_l\). The tensor \(D\) is the average of \(U\otimes V\), where
+\[
+ U=\sum_{i,l\in L_i} k_i^{-1}\sigma_l\,p_i\boxtimes v_l,\qquad
+ V=\sum_{i,l\in L_i}\sigma_l\,u_l\boxtimes q_i.
+\]
+Cross terms disappear by sign averaging and each \(l\) belongs to block \(i\) with probability \(k_i/N\). Disjoint supports of the \(u_l\) give \(\|U\|_I\le(M/d)/(1-\varepsilon)^2\) and \(\|V\|_I\le(1+\varepsilon)/(1-\varepsilon)\) by the row and weighted column estimates. The compression \(PaP\) lies in the matrix span, so the earlier centrality estimate applies. Refining the endpoint covers and sending \(\varepsilon\) to zero yields the upper bound \(M/d\) (rescale the tensors by factors tending to one if necessary). This includes isolated atoms, since only the intermediate cutoffs are chosen in neighborhoods of nonatomic cores. The proof is written-checked, not formalized.
