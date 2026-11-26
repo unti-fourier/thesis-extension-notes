@@ -160,3 +160,19 @@ The ratio is \(8B/V\). Equality in Jensen forces the fibers to have a common len
 For a rational upper certificate, scale by \(49\) and bound the sums of the largest \(1,2,3,4\) coordinates by \(20,35,45,49\), respectively. With only the coordinate caps and total-sum cap, the projection volume and the four-dimensional volume are \(46669/6\) and \(991681/8\) by inclusion–exclusion. The three-coordinate cuts remove \(1022/3\) and \(9008/3\), respectively: the distinct triple cuts do not overlap, and for total of the triple \(49-u\) use density \((11+u)^2/2\) on \(0\le u\le4\); the fourth variable contributes length \(u\). After these cuts the pair violations are disjoint as well. For pair sum \(40-v\), \(0\le v\le5\), use density \(v\), remaining individual caps \(5+v\), and remaining pair cap \(9+v\). The removals are \(3\int_0^5 v(5+v)\,dv=625/2\) and \(6\int_0^5 v[(5+v)^2-(1+v)^2/2]\,dv=18225/4\). The final scaled volumes are \(7125\) and \(2793629/24\); the ratio is the displayed rational bound after rescaling. An independent rational triangulation check gives the same volumes.
 
 For every merely clipped cube \([0,a]^4\cap\Sigma_4\), its unscaled volumes obey \(B_a>3V_a\). For \(0<a\le1/3\) use \(B_a=a^3\), \(V_a\le a^4\) and strict volume loss at \(a=1/3\). For \(1/3\le a\le1/2\), inclusion–exclusion gives \(24(B_a-3V_a)=(1-t)^4/27+t^3(1-t)/2+t^4/4\), \(t=6a-2\). For \(1/2\le a\le1\) it gives \(1-12(1-a)^3a\ge1/4\); \(a\ge1\) gives the whole simplex. Thus the three-cut set strictly improves the entire clipped cube family. The exact value of \(h_4\) remains open in this note. Written and rational-arithmetic checks only, not Lean.
+
+## The high-dimensional leading term
+
+As \(d\to\infty\), \(h_d/d^2\to1\). The following quantitative bounds hold for some absolute \(C\) and \(d\ge3\):
+\[
+ d^2+\tfrac13d\log d-Cd\le h_d<d^2+\sqrt{6/\pi}\,d^{3/2}.
+\]
+The correction terms are bounds; they do not determine the first correction to \(h_d\).
+
+For any finite-perimeter \(E\subseteq\Sigma_d\) of volume \(V>0\) and perimeter \(P=P_1(E)\), sum the lower-dimensional section inequality over all coordinates. Each directional variation is counted \(d-1\) times, giving \((d-1)P\ge h_{d-1}\sum_i\int_E(1-x_i)^{-1}\,dx\). A fiber of length \(\ell\) contributes at least \(-\log(1-\ell)\), because the integrand is increasing, and the total measure of the bases of positive-length fibers is at most \(P/2\) by one-dimensional variation. Add zero-length fibers to make that measure \(P/2\). Total integrated length is \(dV\), so Jensen bounds the right side from below by \(-\tfrac12h_{d-1}P\log(1-2dV/P)\). Thus
+\[
+ h_d\ge 2d/[1-\exp(-2(d-1)/h_{d-1})],\qquad h_1=2.
+\]
+Iteration for \(h_d/d\) is bounded below by the sequence from \(u_1=2\), \(u_{j+1}=1+\coth(1/u_j)\). Since \(u_{j+1}-u_j=1+1/(3u_j)+O(u_j^{-3})\) and \(u_j\ge j+1\), one first obtains \(u_j=j+O(\log j)\), then \(u_j=j+\frac13\log j+O(1)\) by summing the now summable errors.
+
+For an elementary upper bound on the leading term, clip the cube of edge \(a=2(1-d^{-1/3})/d\). Its retained volume fraction tends to one by Chebyshev for the sum of independent uniform coordinates, whose mean is \(1-d^{-1/3}\) and variance \(O(1/d)\). Each projection has area at most \(a^{d-1}\). For the sharper bound, clip instead the cube of edge \(a=2/d\); the cutting hyperplane bisects the cube. The volume is \(a^d/2\), the surviving coordinate-face perimeter is \(d a^{d-1}\), and the new face contributes \(\sqrt d\,a^{d-1}\sigma_d\), where \(\sigma_d\) is the central diagonal section area of the unit cube. Thus this competitor has ratio \(d^2+\sigma_d d^{3/2}\). The known bound \(\sigma_d<\sqrt{6/\pi}\) follows from [Bartha, Fodor and González Merino (2021), Corollary 1](https://arxiv.org/pdf/2005.08292#page=2). The simplex bounds above were checked in writing; priority and Lean verification are not claimed.
