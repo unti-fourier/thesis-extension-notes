@@ -1,6 +1,8 @@
 # The absolute Hochschild comparison in every finite degree
 
-**Work in progress.** Written verification only; not a paper, preprint, Lean formalization, or priority claim.
+**Work in progress.** A research note, not a paper, preprint, peer-reviewed publication, or priority claim.
+
+**Verification status (2026-11-27).** The all-degree split injection and quotient-seminorm equality were checked in Lean 4.27.0 for the **row completion with anchored coefficients**: the predual is a separable Bochner space with a strongly continuous isometric action and covariant multiplication along the measurable anchor. The Bochner-algebra variant and the counterexample to strict retraction below are checked in writing only.
 
 The [degree-two comparison](02-locally-compact-absolute-hh2-split-injection.md), with its precise coefficient hypotheses and norms, extends to every finite degree \(n\ge0\):
 \[
