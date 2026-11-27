@@ -127,3 +127,55 @@ Lebesgue 測度を持つ \(\mathbb R\) では、テストの両端を内部に�
  1\le C\left(\frac1n+\frac nT\right)
 \]
 となる。まず \(T\to\infty\)、次に \(n\to\infty\) とすれば矛盾する。こうして非 amenability は全体の環で直接従う。(3) は十分条件であり、非コンパクト基底についての一般分類は残る。
+
+## 4　同じ重みの中間点が無限にあっても定数は 1 とは限らない
+
+**重みが固定区間 \([a,b]\subset(0,\infty)\) に入る中間点が無限にあっても、raw \(I\)-ノルム環の \(\mathrm{AM}=1\) は従いません。** 実際、中間点の重みをすべて正確に \(1\) に選べる例で、最適定数を計算できます。
+
+\(0<\theta<1\) とし、可算離散空間 \(X=\{o\}\sqcup\{z_j:j\ge1\}\sqcup\{y_j:j\ge1\}\) に
+\[
+ w_o=\theta,\qquad w_{z_j}=1,\qquad w_{y_j}=j+1
+\]
+という点質量を入れます。この pair groupoid の raw \(I\)-ノルム完備化 \(A\) は amenable で、
+\[
+ \boxed{\mathrm{AM}(A)=1/\theta}
+\]
+です。したがって区間を \([1,2]\) に固定しても、その区間だけから定数の有限な一様上界は得られません。
+
+### 下界　軽い一点に戻る列の評価
+
+核 \(f\) を行列 \(a_{ij}=w_j f(i,j)\) に移すと、畳み込みは通常の行列積になり、
+\[
+ \|a\|_I=\max\left\{\sup_i\sum\limits_j|a_{ij}|,\ 
+                    \sup_j\frac1{w_j}\sum\limits_i w_i|a_{ij}|\right\}.
+\]
+上界 \(C\) の近似対角 \(m_\alpha\) を仮定します。中間点 \(o\) を通る対角成分を \(\lambda_i(a\otimes b)=a_{io}b_{oi}\) と置くと、
+\(\sum_i|\lambda_i(a\otimes b)|\le\sup_i|a_{io}|\sum_i|b_{oi}|\le\|a\|_I\|b\|_I\) です。従って \(\sum_i|\lambda_i(m_\alpha)|\le C\) です。
+
+行列単位 \(E_{ji}\) との交換子を有界汎関数 \(a\otimes b\mapsto a_{jo}b_{oi}\) で評価すると、\(\lambda_i(m_\alpha)-\lambda_j(m_\alpha)\to0\) を得ます。固定した \(i\) と相異なる \(N\) 個の \(j\) について、先に \(\limsup_\alpha\) を取れば \(\limsup_\alpha|\lambda_i(m_\alpha)|\le C/N\) です。特に \(\lambda_o(m_\alpha)\to0\) です。
+
+一方、\(k\ne o\) では \(w_k\ge1\) なので、第 \(o\) 列の評価から \(|b_{ko}|\le\theta\|b\|_I\) です。これを \(a\) の第 \(o\) 行と組み合わせると、積写像 \(\pi\) に対して
+\[
+ |(\pi m)_{oo}-\lambda_o(m)|\le\theta\|m\|_\pi
+\]
+が従います。積条件 \(\pi(m_\alpha)E_{oo}\to E_{oo}\) により左辺は \(1\) に収束し、\(C\ge1/\theta\) となります。この下界は任意の近似対角に適用できます。
+
+### 上界　長方行列平均で同じ定数を実現する
+
+有限な外端集合 \(F\) を固定し、\(n_o=1\)、\(i\ne o\) では \(n_i=w_i\) とします。\(N=\sum_{i\in F}n_i\) 個の重み \(1\) の点を \(F\) の外に選んで \(J\) とし、\(J\) を大きさ \(n_i\) のブロック \(S_i\) に一様ランダムに割り当てます。独立な一様符号 \(\epsilon_k\) を用いて
+\[
+ U=\sum\limits_{i\in F,\,k\in S_i}\frac{\epsilon_k}{n_i}E_{ik},
+ \qquad
+ V=\sum\limits_{i\in F,\,k\in S_i}\epsilon_k E_{ki}
+\]
+と置きます。両脚の絶対行和は最大 \(1\) です。加重列和は \(U\) で最大 \(\max_i w_i/n_i\le1\)、\(V\) で最大 \(\max_i n_i/w_i\le1/\theta\) です。
+
+符号平均で異なる中間点の項が消え、\(\Pr(k\in S_i)=n_i/N\) なので、
+\[
+ M_F=\mathbb E(U\otimes V)
+     =\frac1N\sum\limits_{i\in F,\,k\in J}E_{ik}\otimes E_{ki},
+ \qquad \|M_F\|_\pi\le1/\theta .
+\]
+積は \(\pi M_F=\sum_{i\in F}E_{ii}\) です。また \(a,b\in F\) に対し、\(E_{ab}\cdot M_F\) と \(M_F\cdot E_{ab}\) はともに \(N^{-1}\sum_{k\in J}E_{ak}\otimes E_{kb}\) です。従って \(F\) を包含順に広げると各有限台テストをやがて厳密に満たし、稠密性から \(A\) の近似対角を得ます。軽い一点の重みも \(1\) に替えれば、同じ構成で \(\mathrm{AM}=1\) です。
+
+近似対角による判定は Johnson（1972）、正方有限行列環での有限群平均は Grønbæk–Johnson–Willis（1994）, Proposition 3.2 にあります。ここでの加重長方行列の両脚の評価と下界は、上の離散行列計算から得たものです。[Johnson 原論文](https://doi.org/10.2307/2373751)・[Grønbæk–Johnson–Willis, Proposition 3.2](https://arxiv.org/pdf/math/9209211#page=8)
